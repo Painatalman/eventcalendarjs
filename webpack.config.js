@@ -3,9 +3,9 @@ const webpack = require('webpack');
 const postcssNested = require('postcss-nested');
 
 module.exports = {
-  entry: path.resolve(__dirname, './scripts/app.babel.js'),
+  entry: path.resolve(__dirname, './app.babel.js'),
   output: {
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, './dist'),
     filename: 'app.js'
   },
   externals: {

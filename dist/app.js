@@ -52,8 +52,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var css = __webpack_require__(4);
-
 	// TEST
 	var eventSettingObjects = [{
 	  day: 25,
@@ -102,6 +100,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var css = __webpack_require__(4);
 
 	var Calendar = function () {
 	  // TODO: set an image for each month/year combo, or just for each month, with defaults
@@ -472,8 +472,8 @@
 	if (false) {
 		// When the styles change, update the <style> tags
 		if (!content.locals) {
-			module.hot.accept("!!./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js!./app.post.css", function () {
-				var newContent = require("!!./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js!./app.post.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/postcss-loader/index.js!./Calendar.css", function () {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/postcss-loader/index.js!./Calendar.css");
 				if (typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -493,7 +493,7 @@
 
 
 	// module
-	exports.push([module.id, "@use postcss-nested;\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n.calendar-widget {\n  display: inline-block;\n  \n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n  \n  border: 1px solid black;\n}\n\n.calendar-widget__picture { \n  width: 100%;\n}\n.calendar-widget__picture-frame {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.calendar-widget__title {\n text-align: center;\n  font-size: 1.3em;\n  padding: 12px 0;\n  margin-bottom: 12px;\n  box-shadow: 0 2px 5px black;\n  text-transform: uppercase;\n  font-weight: bold;\n}\n.calendar-widget__days {\n  text-align: center;\n  width: 100%;\n}\n.calendar-widget__day {\n\n  height: 35px;\n}\n.calendar-widget__day--has-event {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}", ""]);
+	exports.push([module.id, "@use postcss-nested;\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n.calendar-widget {\n  display: inline-block;\n\n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n\n  border: 1px solid black;\n}\n\n.calendar-widget__picture {\n  width: 100%;\n}\n.calendar-widget__picture-frame {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.calendar-widget__title {\n text-align: center;\n  font-size: 1.3em;\n  padding: 12px 0;\n  margin-bottom: 12px;\n  box-shadow: 0 2px 5px black;\n  text-transform: uppercase;\n  font-weight: bold;\n}\n.calendar-widget__days {\n  text-align: center;\n  width: 100%;\n}\n.calendar-widget__day {\n\n  height: 35px;\n}\n.calendar-widget__day--has-event {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}\n", ""]);
 
 	// exports
 

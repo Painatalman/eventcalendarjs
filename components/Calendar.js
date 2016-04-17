@@ -1,6 +1,8 @@
 import EventCollection from "./EventCollection.js";
 import Event from "./Event.js";
 
+var css = require('./Calendar.css');
+
 export default class Calendar {
   // TODO: set an image for each month/year combo, or just for each month, with defaults
   // TODO: what is the multipleEvents parameter for?

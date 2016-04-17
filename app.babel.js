@@ -1,7 +1,5 @@
 import Calendar from "./components/Calendar.js";
 
-var css = require('../app.post.css');
-
 // TEST
 var eventSettingObjects = [
   {
