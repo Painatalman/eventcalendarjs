@@ -97,11 +97,15 @@
 
 	var _Event2 = _interopRequireDefault(_Event);
 
+	var _Calendar = __webpack_require__(4);
+
+	var _Calendar2 = _interopRequireDefault(_Calendar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var css = __webpack_require__(4);
+	console.log(_Calendar2.default);
 
 	var Calendar = function () {
 	  // TODO: set an image for each month/year combo, or just for each month, with defaults
@@ -150,6 +154,11 @@
 
 	    // THE RENDERING IS THE FINAL STEP
 
+	    // add the default class for eventCalendar to the element
+	    if (!this.element.classList.contains(_Calendar2.default["calendar-widget"])) {
+	      this.element.classList.add(_Calendar2.default["calendar-widget"]);
+	    }
+
 	    this.render();
 	    // console.log(this.getFirstDayOfCalendar().getDate());
 	  }
@@ -164,15 +173,21 @@
 	      var headerPictureNode = document.createElement("img");
 	      var headerTitleNode = document.createElement("div");
 
-	      headerNode.classList.add("calendar-widget__header");
-	      headerTitleNode.innerHTML = curDate.getFullYear() + " - " + curDate.toLocaleString(window.locale, { month: "long" });
+	      var prevNavNode = this.getCalendarNavNode(false);
+	      var nextNavNode = this.getCalendarNavNode(true);
+	      var titleNode = this.getCalendarTitleNode();
 
-	      headerTitleNode.classList.add("calendar-widget__title");
+	      headerNode.classList.add(_Calendar2.default["calendar-widget__header"]);
+	      headerTitleNode.appendChild(prevNavNode);
+	      headerTitleNode.appendChild(titleNode);
+	      headerTitleNode.appendChild(nextNavNode);
+
+	      headerTitleNode.classList.add(_Calendar2.default["calendar-widget__title"]);
 
 	      // picture-specific
 	      if (this.pictureUrl) {
-	        headerPictureFrameNode.classList.add("calendar-widget__picture-frame");
-	        headerPictureNode.classList.add("calendar-widget__picture");
+	        headerPictureFrameNode.classList.add(_Calendar2.default["calendar-widget__picture-frame"]);
+	        headerPictureNode.classList.add(_Calendar2.default["calendar-widget__picture"]);
 	        headerPictureNode.setAttribute("src", this.pictureUrl);
 
 	        headerPictureFrameNode.appendChild(headerPictureNode);
@@ -184,6 +199,37 @@
 	      return headerNode;
 	    }
 	  }, {
+	    key: "getCalendarTitleNode",
+	    value: function getCalendarTitleNode() {
+	      var titleSpan = document.createElement("span");
+
+	      titleSpan.innerHTML += this.curDate.getFullYear() + " - " + this.curDate.toLocaleString(window.locale, {
+	        month: "long"
+	      });
+
+	      return titleSpan;
+	    }
+	  }, {
+	    key: "getCalendarNavNode",
+	    value: function getCalendarNavNode() {
+	      var _this2 = this;
+
+	      var isNext = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+
+	      var navSpan = document.createElement("span");
+	      var modifierClassSuffix = isNext ? "next" : "prev";
+
+	      navSpan.classList.add(_Calendar2.default["calendar-widget__nav"]);
+	      navSpan.classList.add(_Calendar2.default["calendar-widget__nav--" + modifierClassSuffix]);
+
+	      navSpan.addEventListener("click", function () {
+
+	        _this2.setPrevNextMonth(isNext);
+	      });
+
+	      return navSpan;
+	    }
+	  }, {
 	    key: "getCalendarHeaderNode",
 	    value: function getCalendarHeaderNode() {
 	      var headerNode = document.createElement("tr");
@@ -193,8 +239,10 @@
 	      for (var i = 0; i < 7; i++) {
 
 	        var thNode = document.createElement("th");
-	        thNode.classList.add("calendar-widget__weekday");
-	        thNode.innerHTML = date.toLocaleString(window.navigator.language, { weekday: 'short' });
+	        thNode.classList.add(_Calendar2.default["calendar-widget__weekday"]);
+	        thNode.innerHTML = date.toLocaleString(window.navigator.language, {
+	          weekday: 'short'
+	        });
 	        headerNode.appendChild(thNode);
 	        date.setDate(date.getDate() + 1);
 	      }
@@ -205,7 +253,8 @@
 	    key: "getCalendarNode",
 	    value: function getCalendarNode() {
 	      var calendarNode = document.createElement("table");
-	      calendarNode.classList.add("calendar-widget__days");
+
+	      calendarNode.classList.add(_Calendar2.default["calendar-widget__days"]);
 	      calendarNode.appendChild(this.getCalendarHeaderNode());
 	      calendarNode.appendChild(this.getCalendarDaysNode());
 
@@ -216,7 +265,7 @@
 	    value: function getCalendarWeekNode(firstDay) {
 	      var date = new Date(firstDay);
 	      var calendarWeekNode = document.createElement("tr");
-	      calendarWeekNode.classList.add("calendar-widget__week");
+	      calendarWeekNode.classList.add(_Calendar2.default["calendar-widget__week"]);
 	      // console.log(date.toString());
 	      // use the first 7 days of the calendar to render the header
 	      for (var i = 0; i < 7; i++) {
@@ -232,7 +281,7 @@
 	      var calendarDayNode = document.createElement("td"),
 	          event = this.events.getEventFor(date);
 
-	      calendarDayNode.classList.add("calendar-widget__day");
+	      calendarDayNode.classList.add(_Calendar2.default["calendar-widget__day"]);
 	      calendarDayNode.innerHTML = date.getDate();
 
 	      if (event) {
@@ -240,7 +289,7 @@
 	        calendarDayNode.title = event.title;
 	        // add a class
 	        // TODO: set this class as dynamic
-	        calendarDayNode.classList.add("calendar-widget__day--has-event");
+	        calendarDayNode.classList.add(_Calendar2.default["calendar-widget__day--has-event"]);
 	        // TODO: set a data attribute
 	      }
 
@@ -320,6 +369,20 @@
 	      lastDate.setDate(lastDate.getDate() + offset);
 	      // console.log(lastDate.toString());
 	      return lastDate;
+	    }
+	  }, {
+	    key: "setPrevNextMonth",
+	    value: function setPrevNextMonth() {
+	      var isNext = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+
+	      var gap = isNext ? 1 : -1;
+
+	      this.curDate.setMonth(this.curDate.getMonth() + gap);
+
+	      // console.log(this.curDate.getMonth());
+
+	      // re-render afterwards
+	      this.render();
 	    }
 	  }]);
 
@@ -472,8 +535,8 @@
 	if (false) {
 		// When the styles change, update the <style> tags
 		if (!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/postcss-loader/index.js!./Calendar.css", function () {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/postcss-loader/index.js!./Calendar.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules!./../node_modules/postcss-loader/index.js!./Calendar.css", function () {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules!./../node_modules/postcss-loader/index.js!./Calendar.css");
 				if (typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -493,10 +556,22 @@
 
 
 	// module
-	exports.push([module.id, "@use postcss-nested;\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n.calendar-widget {\n  display: inline-block;\n\n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n\n  border: 1px solid black;\n}\n\n.calendar-widget__picture {\n  width: 100%;\n}\n.calendar-widget__picture-frame {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.calendar-widget__title {\n text-align: center;\n  font-size: 1.3em;\n  padding: 12px 0;\n  margin-bottom: 12px;\n  box-shadow: 0 2px 5px black;\n  text-transform: uppercase;\n  font-weight: bold;\n}\n.calendar-widget__days {\n  text-align: center;\n  width: 100%;\n}\n.calendar-widget__day {\n\n  height: 35px;\n}\n.calendar-widget__day--has-event {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}\n", ""]);
+	exports.push([module.id, "/**\n@use postcss-nested;\n**/\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n._2VpJ0_GzAzBmVs4FmLAdoK {\n  display: inline-block;\n\n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n\n  border: 1px solid black;\n}\n\n._3AxKOm1VPIPBo-609EF9Pg {\n\n}\n\n._1C95twiWFW8wvTtcUv5ZLq {\n  width: 100%;\n}\n._1_C2-ioLlVtFRKLbJJtjN2 {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n._23r0ZfJYP_HyjE85kBucKS {\n text-align: center;\n  font-size: 1.3em;\n  padding: 12px 0;\n  margin-bottom: 12px;\n  box-shadow: 0 2px 5px black;\n  text-transform: uppercase;\n  font-weight: bold;\n}\n._2GAFq7bjc6xoHyLl9VRbVd {\n  text-align: center;\n  width: 100%;\n}\n._3L4nuVZZcZYqAn07yvFFRC {\n\n  height: 35px;\n}\n._3VV6JlgCiwYKxnVDBDcW28 {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}\n\n._3fd9X_aaVPld3Cax0KgzKJ {\n  padding: 0 32px;\n\n  cursor: pointer;\n}\n\n._2g3tUSf3_NP2vIQJ8bnwHE {\n  float: left;\n}\n\n._2g3tUSf3_NP2vIQJ8bnwHE::before {\n  content:\"\\25C3\";\n}\n\n._22k04_y0QNFB_y47hPxz6N {\n  float: right;\n}\n\n._22k04_y0QNFB_y47hPxz6N::before {\n  content:\"\\25B6\";\n}\n", ""]);
 
 	// exports
-
+	exports.locals = {
+		"calendar-widget": "_2VpJ0_GzAzBmVs4FmLAdoK",
+		"calendar-widget__header": "_3AxKOm1VPIPBo-609EF9Pg",
+		"calendar-widget__picture": "_1C95twiWFW8wvTtcUv5ZLq",
+		"calendar-widget__picture-frame": "_1_C2-ioLlVtFRKLbJJtjN2",
+		"calendar-widget__title": "_23r0ZfJYP_HyjE85kBucKS",
+		"calendar-widget__days": "_2GAFq7bjc6xoHyLl9VRbVd",
+		"calendar-widget__day": "_3L4nuVZZcZYqAn07yvFFRC",
+		"calendar-widget__day--has-event": "_3VV6JlgCiwYKxnVDBDcW28",
+		"calendar-widget__nav": "_3fd9X_aaVPld3Cax0KgzKJ",
+		"calendar-widget__nav--prev": "_2g3tUSf3_NP2vIQJ8bnwHE",
+		"calendar-widget__nav--next": "_22k04_y0QNFB_y47hPxz6N"
+	};
 
 /***/ },
 /* 6 */

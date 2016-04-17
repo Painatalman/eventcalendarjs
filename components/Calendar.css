@@ -1,4 +1,6 @@
+/**
 @use postcss-nested;
+**/
 
 * {
   box-sizing: border-box;
@@ -13,6 +15,10 @@
   max-width: 450px;
 
   border: 1px solid black;
+}
+
+.calendar-widget__header {
+
 }
 
 .calendar-widget__picture {
@@ -46,4 +52,24 @@
     cursor: pointer;
     text-decoration: underline;
   }
+}
+
+.calendar-widget__nav {
+  padding: 0 32px;
+
+  cursor: pointer;
+
+  &--prev {
+    float: left;
+
+  &::before {
+    content:"\25C3";
+  }
+    }
+  &--next {
+    float: right;
+  &::before {
+    content:"\25B6";
+  }
+    }
 }
