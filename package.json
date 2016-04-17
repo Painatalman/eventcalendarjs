@@ -1,0 +1,31 @@
+{
+  "name": "eventcalendarjs",
+  "version": "1.0.0",
+  "description": "An Event Calendar Widget for rendering a calendar with events, and pictures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Painatalman/eventcalendarjs.git"
+  },
+  "keywords": [
+    "calendar",
+    "widget"
+  ],
+  "author": "Carlos Batman <maiquedi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Painatalman/eventcalendarjs/issues"
+  },
+  "homepage": "https://github.com/Painatalman/eventcalendarjs#readme",
+  "devDependencies": {
+    "babel-core": "6.7.6",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.6.0",
+    "css-loader": "0.23.1",
+    "style-loader": "0.13.1",
+    "webpack": "1.13.0"
+  }
+}

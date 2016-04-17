@@ -1,0 +1,49 @@
+@use postcss-nested;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.calendar-widget {
+  display: inline-block;
+
+  width: 100%;
+  min-width: 240px;
+  max-width: 450px;
+
+  border: 1px solid black;
+}
+
+.calendar-widget__picture {
+  width: 100%;
+}
+.calendar-widget__picture-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.calendar-widget__title {
+ text-align: center;
+  font-size: 1.3em;
+  padding: 12px 0;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.calendar-widget__days {
+  text-align: center;
+  width: 100%;
+}
+.calendar-widget__day {
+
+  height: 35px;
+
+  &--has-event {
+    color: salmon;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
