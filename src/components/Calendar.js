@@ -2,9 +2,8 @@ import EventCollection from "./EventCollection.js";
 import Event from "./Event.js";
 
 import styles from './Calendar.css';
-console.log(styles);
 
-export default class Calendar {
+class Calendar {
   // TODO: set an image for each month/year combo, or just for each month, with defaults
   // TODO: what is the multipleEvents parameter for?
   // firstDay is the first day of the week in the calendar: 1 is for "monday"
@@ -234,3 +233,5 @@ export default class Calendar {
     this.render();
   }
 }
+
+module.exports = Calendar;

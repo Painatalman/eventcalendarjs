@@ -1,10 +1,12 @@
 {
-  "name": "eventcalendarjs",
-  "version": "1.0.0",
+  "name": "@painatalman/eventcalendarjs",
+  "version": "1.0.3",
   "description": "An Event Calendar Widget for rendering a calendar with events, and pictures",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "webpack",
+    "demo": "webpack --config webpack.demo.js",
+    "compile-and-demo": "npm run compile && npm run demo"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,9 @@
     "css-loader": "0.23.1",
     "style-loader": "0.13.1",
     "webpack": "1.13.0",
-    "webpack-dev-server": "1.14.1"
+    "webpack-dev-server": "1.14.1",
+    "postcss-nested": "^1.0.0"
+  },
+  "dependencies": {
   }
 }

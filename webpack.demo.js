@@ -3,13 +3,10 @@ const webpack = require('webpack');
 const postcssNested = require('postcss-nested');
 
 module.exports = {
-  entry:  path.resolve(__dirname, './src/app.js'),
+  entry:  path.resolve(__dirname, './demo.js'),
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'app.js',
-    libraryTarget: 'umd',
-    library: 'eventcalendarjs',
-    umdNamedDefine: true
+    filename: 'demo.js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin()

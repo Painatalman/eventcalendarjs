@@ -1,5 +1,5 @@
-import Calendar from "./components/Calendar.js";
-
+//import Calendar from "./components/Calendar.js";
+var Calendar = require('./dist/app.js');
 // TEST
 var eventSettingObjects = [
   {
