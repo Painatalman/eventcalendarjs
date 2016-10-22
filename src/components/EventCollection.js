@@ -5,6 +5,14 @@ export default class EventCollection {
     this.events = {};
   }
 
+  createEvent(eventData = {day, month, year, title, description:"No description", picture, isYearly:false}) {
+    return new Event(eventData);
+  }
+
+  createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false}) {
+    this.addEvent(this.createEvent(eventData));
+  }
+
   addEvent(event) {
     // TODO: check for instance of event
     const year = event.getYear(),

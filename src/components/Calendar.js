@@ -45,6 +45,11 @@ class Calendar {
     this.render();
     // console.log(this.getFirstDayOfCalendar().getDate());
   }
+
+  createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false}) {
+    this.events.createAndAddEvent(eventData)
+  }
+
   getHeaderNode() {
     let curDate = this.curDate;
 
