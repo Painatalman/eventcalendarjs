@@ -26,19 +26,25 @@ export default class EventCollection {
       events[year][month] = {};
     }
     if (!(day in events[year][month])) {
-      events[year][month][day] = {};
+      events[year][month][day] = [];
     }
 
-    events[year][month][day] = event;
+    events[year][month][day].push(event);
 
   }
-  getEventFor(dayOrDate, month, year) {
+  getEventsFor(dayOrDate, month, year) {
     const events = this.events;
     if (dayOrDate instanceof Date) {
       year = dayOrDate.getFullYear();
       month = dayOrDate.getMonth() + 1;
       dayOrDate = dayOrDate.getDate();
     }
-    return (year in events && month in events[year] && dayOrDate in events[year][month] && events[year][month][dayOrDate]);
+
+    // SHAME: repeated code for yearly events
+    // TODO: create a function to get all events based on year
+    let singleEvents = year in events && month in events[year] && dayOrDate in events[year][month] && events[year][month][dayOrDate] || [];
+    let yearlyEvents = 'all' in events && month in events['all'] && dayOrDate in events['all'][month] && events['all'][month][dayOrDate] || [];
+
+    return singleEvents.concat(yearlyEvents);
   }
 }

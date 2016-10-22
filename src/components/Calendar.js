@@ -148,14 +148,16 @@ class Calendar {
   }
   getCalendarDayNode(date) {
     let calendarDayNode = document.createElement("td"),
-      event = this.events.getEventFor(date);
+      events = this.events.getEventsFor(date);
 
     calendarDayNode.classList.add(styles["calendar-widget__day"]);
     calendarDayNode.innerHTML = date.getDate();
 
-    if (event) {
+    if (events.length) {
       // console.log("an event:", event);
-      calendarDayNode.title = event.title;
+      calendarDayNode.title = events.map(function(event){return event.title}).reduce(function(finalTitle, title){
+        return `${finalTitle} | ${title}`;
+      });
       // add a class
       // TODO: set this class as dynamic
       calendarDayNode.classList.add(styles["calendar-widget__day--has-event"]);

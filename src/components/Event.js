@@ -1,7 +1,6 @@
 export default class Event {
   // WARNING: month is in the 1-12 format, not the default 0-11 one
   constructor({day, month, year, title, description="No description", picture, isYearly=false} ) {
-    this.ALL_YEARS_VALUE = 'all';
 
     this.date = new Date();
     const date = this.date;
@@ -15,7 +14,7 @@ export default class Event {
     this.picture = picture;
   }
   getYear() {
-    return this.isYearly ? this.ALL_YEARS_VALUE : this.date.getFullYear();
+    return this.isYearly ? 'all' : this.date.getFullYear();
   }
   getMonth() {
     return this.date.getMonth() + 1;
