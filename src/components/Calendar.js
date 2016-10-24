@@ -17,6 +17,10 @@ class Calendar {
     // set to firstDay of Month
     curDate.setDate(1);
 
+    // defines whether the calendar has been rendered or not
+    // it is set to true when rendered is first called
+    this.isRendered = false;
+
     this.pictureUrl = pictureUrl;
     // TODO: set for multiple elements
     this.element = document.querySelector(elementSelector);
@@ -46,10 +50,23 @@ class Calendar {
     // console.log(this.getFirstDayOfCalendar().getDate());
   }
 
-  createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false}) {
-    this.events.createAndAddEvent(eventData)
+  createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false}, callbacks={success: null, error: null}) {
+    try {
+      this.events.createAndAddEvent(eventData);
+      if (this.isRendered) {
+        // already rendered? Re-render it!
+        this.render();
+      }
+      if (callbacks && typeof(callbacks.success) === 'function'){
+          callbacks.success();
+      }
+    } catch (e) {
+      if (callbacks && typeof(callbacks.error) === 'function'){ callbacks.error();}
+    }
   }
-
+  getEvents() {
+    return this.events;
+  }
   getHeaderNode() {
     let curDate = this.curDate;
 
@@ -194,6 +211,8 @@ class Calendar {
     node.appendChild(this.getCalendarNode());
 
     this.element.appendChild(node);
+
+    this.isRendered = true;
   }
   getLastDayOfMonth() {
     let curDate = this.curDate;
