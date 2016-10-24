@@ -65,7 +65,7 @@ class Calendar {
     }
   }
   getEvents() {
-    return this.events;
+    return this.events.getEvents();
   }
   getHeaderNode() {
     let curDate = this.curDate;

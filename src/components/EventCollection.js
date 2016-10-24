@@ -32,6 +32,9 @@ export default class EventCollection {
     events[year][month][day].push(event);
 
   }
+  getEvents() {
+    return this.events;
+  }
   getEventsFor(dayOrDate, month, year) {
     const events = this.events;
     if (dayOrDate instanceof Date) {

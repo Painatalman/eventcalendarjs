@@ -50,5 +50,5 @@ calendar.createAndAddEvent({
   isYearly: true,
   title: "Ano novo (geral)"
 }, {
-  success: () => {alert('added')}
+  success: () => {console.log('added')}
 });
