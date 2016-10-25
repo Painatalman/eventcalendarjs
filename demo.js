@@ -50,5 +50,7 @@ calendar.createAndAddEvent({
   isYearly: true,
   title: "Ano novo (geral)"
 }, {
-  success: () => {console.log('added')}
+  success: () => {console.log(JSON.stringify(calendar.getEvents(true)))}
 });
+
+window.calendar = calendar;

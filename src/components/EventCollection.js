@@ -32,8 +32,47 @@ export default class EventCollection {
     events[year][month][day].push(event);
 
   }
-  getEvents() {
-    return this.events;
+  getEvents(deserialize=false) {
+    if (!deserialize) {
+      return this.events;
+    }
+    else {
+        let events = this.events;
+        let deserializedEvents = [];
+
+        // SHAME: woah, triple loop of keys
+        for (let year in events) {
+          if (events.hasOwnProperty(year)) {
+            let yearEvents = events[year];
+            for (let month in yearEvents) {
+              if (yearEvents.hasOwnProperty(month)) {
+                let monthEvents = yearEvents[month];
+                for (let day in monthEvents) {
+                  if (monthEvents.hasOwnProperty(day)) {
+                    let dayEvents = monthEvents[day];
+
+                    dayEvents.forEach((event) => {
+                      let newEvent = {};
+
+                      Object.assign(newEvent, event, {
+                        day: event.getDay(),
+                        month: event.getMonth(),
+                        year: event.getYear()
+                      });
+
+                      delete newEvent.date;
+
+                      deserializedEvents.push(newEvent);
+                    });
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        return deserializedEvents;
+    }
   }
   getEventsFor(dayOrDate, month, year) {
     const events = this.events;

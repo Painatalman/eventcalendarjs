@@ -64,8 +64,8 @@ class Calendar {
       if (callbacks && typeof(callbacks.error) === 'function'){ callbacks.error();}
     }
   }
-  getEvents() {
-    return this.events.getEvents();
+  getEvents(deserialized=false) {
+    return this.events.getEvents(deserialized);
   }
   getHeaderNode() {
     let curDate = this.curDate;
