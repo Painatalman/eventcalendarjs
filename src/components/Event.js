@@ -19,6 +19,10 @@ export default class Event {
 
     this.date = new Date();
     const date = this.date;
+
+    // set year to current if it is 'all'... for creating a real date, nothing else
+    year = year === 'all' ? getCurrentYear() : year;
+
     date.setDate(day);
     date.setMonth(parseInt(month) - 1);
     date.setYear(year);
