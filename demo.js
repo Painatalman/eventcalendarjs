@@ -68,4 +68,11 @@ calendar.createAndAddEvent({
   title: "Today day!"
 });
 
+calendar.createAndAddEvent({
+  day: 21,
+  month: 6,
+  isYearly: true,
+  year: 'all'
+});
+
 window.calendar = calendar;
