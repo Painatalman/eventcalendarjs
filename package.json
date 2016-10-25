@@ -1,6 +1,6 @@
 {
   "name": "@painatalman/eventcalendarjs",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "An Event Calendar Widget for rendering a calendar with events, and pictures",
   "main": "dist/app.js",
   "scripts": {

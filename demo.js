@@ -53,4 +53,19 @@ calendar.createAndAddEvent({
   success: () => {console.log(JSON.stringify(calendar.getEvents(true)))}
 });
 
+
+// testing no year
+calendar.createAndAddEvent({
+  day: 1,
+  month: 11,
+  isYearly: true,
+  title: "Dia de los muertos"
+}, {
+  success: () => {console.log(JSON.stringify(calendar.getEvents(true)))}
+});
+
+calendar.createAndAddEvent({
+  title: "Today day!"
+});
+
 window.calendar = calendar;
