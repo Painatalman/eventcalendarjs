@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "webpack",
     "demo": "webpack --config webpack.demo.js",
-    "compile-and-demo": "npm run compile && npm run demo"
+    "compile-and-demo": "npm run compile && npm run demo",
+    "send-to-gh-pages": "git subtree push --prefix demo origin gh-pages"
   },
   "repository": {
     "type": "git",
