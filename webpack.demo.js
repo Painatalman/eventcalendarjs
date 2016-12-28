@@ -5,7 +5,7 @@ const postcssNested = require('postcss-nested');
 module.exports = {
   entry:  path.resolve(__dirname, './demo.js'),
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './demo'),
     filename: 'demo.js'
   },
   plugins: [
