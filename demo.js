@@ -513,8 +513,18 @@
 	  function EventCollection() {
 	    _classCallCheck(this, EventCollection);
 	
+	    // it is actually an object that will have years as keys
 	    this.events = {};
 	  }
+	
+	  /**
+	   * Creates an event.
+	   * This does NOT add an event to the event collection
+	   *
+	   * @param      {Object}  eventData  The event data required for an event creation
+	   * @return     {Event}   { A new Event object }
+	   */
+	
 	
 	  _createClass(EventCollection, [{
 	    key: "createEvent",
@@ -683,6 +693,9 @@
 	    _classCallCheck(this, Event);
 	
 	    this.date = new Date();
+	    // reset the hours, too
+	    // TODO: set option for hours and minutes
+	    this.date.setHours(0, 0, 0, 0);
 	
 	    // set year to current if it is 'all'... for creating a real date, nothing else
 	    if (typeof year !== 'number') {
@@ -714,6 +727,11 @@
 	    key: "getDay",
 	    value: function getDay() {
 	      return this.date.getDate();
+	    }
+	  }, {
+	    key: "getRawDate",
+	    value: function getRawDate() {
+	      return this.date;
 	    }
 	  }, {
 	    key: "getDescription",
@@ -1158,4 +1176,3 @@
 /***/ }
 /******/ ]);
 //# sourceMappingURL=demo.js.map
-
