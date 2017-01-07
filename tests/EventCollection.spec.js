@@ -6,22 +6,25 @@ var expect = require('chai')
 require('mocha-testcheck')
   .install();
 
+import EventCollection from "../src/components/EventCollection.js";
 import Event from "../src/components/Event.js";
 
+let anEvent = new Event({});
+let anEventCollection = new EventCollection({});
+let currentDate = new Date();
 
-
-describe('Event Collection Object', function()
-{
-
-  let anEvent = new Event({});
-  let anEventCollection = new Event({});
-  let currentDate = new Date();
-
-  describe('When initialized with no specific parameters', function() {
-    beforeEach(function(){
+beforeEach(function(){
       anEventCollection = new EventCollection();
       currentDate = new Date();
     });
+
+describe('Event Collection Object initialiation', function()
+{
+
+  
+
+  describe('When initialized with no specific parameters', function() {
+    
 
     it('should be callable without parameters', function()
     {
@@ -31,36 +34,66 @@ describe('Event Collection Object', function()
 
     it('should be callable with an empty object as parameter', function()
     {
-      let anotherEventCollection = new Event(
+      let anotherEventCollection = new EventCollection(
       {});
 
       expect(anotherEventCollection)
         .to.not.be.undefined;
     });
 
-    it('should be initialized with no events, by default, as an empty object', function()
-    {
-      expect(anEventCollection.getEvents())
-        .to.equal({});
-    });
     
-    it('should be initialized with no events, by default, as an array, if deserialized is set to true', function()
+
+    
+  });
+});
+
+describe('Event Collection getEvents method', function() {
+  it('should return an empty object, when initialized with no events', function()
     {
       expect(anEventCollection.getEvents())
-        .to.equal([]);
+        .to.deep.equal({});
     });
 
-    it('should allow for adding an event and then getting it', function()
+    it('should return an empty array, when initialized with no events and deserialized set to true', function()
     {
-      let eventSettings = {day:24, month:12, year:2014, title:"Christmas Eve", description:"A Christmas Eve Calendar", picture, isYearly:false}
+      expect(anEventCollection.getEvents(true))
+        .to.deep.equal([]);
+    });
+});
+
+describe('Event Collection createAndAddEvent method', function()
+{
+  it('should create and add an event, when provided options, similar to an event added in raw', function()
+    {
+      let eventDay = 24,
+          eventMonth = 12,
+          eventYear = 2014;
+
+      let eventSettings = {day:eventDay, month:eventMonth, year:eventYear, title:"Christmas Eve", description:"A Christmas Eve Calendar", isYearly:false};
+
       let anEvent = new Event(eventSettings);
       
       anEventCollection.createAndAddEvent(eventSettings);
       
-      let collectionFirstEvent = addEventCollection.getEvents();
+      let collectionEvents = anEventCollection.getEvents();
       
-      expect(anEventCollection.getEvents())
-        .to.equal("");
+      // a mover verbose expect
+      expect(collectionEvents)
+        .to.deep.equal({
+          2014:{
+            12: {
+              24: [{
+                date: anEvent.getRawDate(),
+                title: anEvent.getTitle(),
+                description: anEvent.getDescription(),
+                picture: anEvent.getPicture(),
+                isYearly: false
+              }]
+            }
+          }
+        });
+
+      // another approach, more object-like
+      expect(collectionEvents[eventYear][eventMonth][eventDay][0]).to.deep.equal(anEvent);
     });
-  });
 });

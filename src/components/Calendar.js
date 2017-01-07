@@ -14,7 +14,7 @@ class Calendar {
   // every eventDay must have a concrete date (day, month, year) and event title, with optional event info
   constructor(elementSelector, {
     year, month, day, firstDayOfWeek = 1, multipleElements = false, pictureUrl, eventSettingObjects = []
-  }) {
+  } = {}) {
     let curDate = new Date();
     year && curDate.setYear(year);
     month && curDate.setMonth(parseInt(month) - 1);
