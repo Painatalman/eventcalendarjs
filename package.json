@@ -34,10 +34,12 @@
     "css-loader": "0.23.1",
     "mocha": "^3.2.0",
     "mocha-testcheck": "^0.1.2",
+    "postcss-loader": "^1.2.1",
     "postcss-nested": "^1.0.0",
     "style-loader": "0.13.1",
     "webpack": "1.13.0",
     "webpack-dev-server": "1.14.1"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }
