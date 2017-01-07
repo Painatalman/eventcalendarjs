@@ -22,6 +22,9 @@ export default class Event {
   constructor({day=getCurrentDay(), month=getCurrentMonth(), year=getCurrentYear(), title="", description="", picture, isYearly=false} = {} ) {
 
     this.date = new Date();
+    // reset the hours, too
+    // TODO: set option for hours and minutes
+    this.date.setHours(0, 0, 0, 0);
 
     // set year to current if it is 'all'... for creating a real date, nothing else
     if (typeof year !== 'number') {
@@ -46,6 +49,9 @@ export default class Event {
   }
   getDay() {
     return this.date.getDate();
+  }
+  getRawDate() {
+    return this.date;
   }
   getDescription() {
     return this.description;

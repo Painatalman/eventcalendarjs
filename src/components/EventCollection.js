@@ -2,9 +2,17 @@ import Event from "./Event.js";
 
 export default class EventCollection {
   constructor() {
+    // it is actually an object that will have years as keys
     this.events = {};
   }
 
+  /**
+   * Creates an event.
+   * This does NOT add an event to the event collection
+   *
+   * @param      {Object}  eventData  The event data required for an event creation
+   * @return     {Event}   { A new Event object }
+   */
   createEvent(eventData = {day, month, year, title, description:"No description", picture, isYearly:false}) {
     return new Event(eventData);
   }

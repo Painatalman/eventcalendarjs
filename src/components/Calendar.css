@@ -52,6 +52,10 @@
     cursor: pointer;
     text-decoration: underline;
   }
+
+  &--is-from-another-month {
+    color: lightgray;
+  }
 }
 
 .calendar-widget__nav {

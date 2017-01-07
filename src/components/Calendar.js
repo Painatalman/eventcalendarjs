@@ -3,6 +3,10 @@ import Event from "./Event.js";
 
 import styles from './Calendar.css';
 
+/**
+ * Calendar class with some private properties, like
+ * - curDate: current date
+ */
 class Calendar {
   // TODO: set an image for each month/year combo, or just for each month, with defaults
   // TODO: what is the multipleEvents parameter for?
@@ -24,6 +28,7 @@ class Calendar {
     this.pictureUrl = pictureUrl;
     // TODO: set for multiple elements
     this.element = document.querySelector(elementSelector);
+    // TODO: set data attributes
     this.curDay = day;
     this.firstDayOfWeek = firstDayOfWeek || 1;
     this.curDate = curDate;
@@ -168,6 +173,12 @@ class Calendar {
       events = this.events.getEventsFor(date);
 
     calendarDayNode.classList.add(styles["calendar-widget__day"]);
+
+    // check if this day belongs to the currently-displayed month
+    if (this.curDate.getMonth() !== date.getMonth()) {
+      calendarDayNode.classList.add(styles["calendar-widget__day--is-from-another-month"]);
+    }
+
     calendarDayNode.innerHTML = date.getDate();
 
     if (events.length) {
