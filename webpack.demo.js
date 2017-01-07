@@ -9,9 +9,9 @@ module.exports = {
     filename: 'demo.js'
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    // new webpack.optimize.UglifyJsPlugin()
   ],
-  // devtool:'source-map',
+  devtool:'source-map',
   module: {
     loaders: [
       {

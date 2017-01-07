@@ -34,3 +34,4 @@ node_modules
 
 # More
 .DS_Store
+*.map
