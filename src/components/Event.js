@@ -16,15 +16,28 @@ function getCurrentDay() {
 /**
  *  An event class for creating event objects that include a day, month, year, title, description and optional picture and isYearly
  *  In case an event is yearly, it returns 'all' in the getYear method
+ *  TODO: force a day, month and year... without these, there is NO valid event
+ *  TODO: validate hours and minutes
+ *  TODO: create a setTime method
  */
 export default class Event {
   // WARNING: month is in the 1-12 format, not the default 0-11 one
-  constructor({day=getCurrentDay(), month=getCurrentMonth(), year=getCurrentYear(), title="", description="", picture, isYearly=false} = {} ) {
+  // WARNING: if there are no hours, then minutes will be ignored even if set up
+  constructor({day=getCurrentDay(), month=getCurrentMonth(), year=getCurrentYear(), title="", description="", picture=null, isYearly=false, id=null, hours=null, minutes=null} = {} ) {
 
     this.date = new Date();
     // reset the hours, too
-    // TODO: set option for hours and minutes
-    this.date.setHours(0, 0, 0, 0);
+
+    if (hours) {
+      // hours are set to their value OR zero
+      minutes = minutes || 0;
+
+      this.date.setHours(hours, minutes, 0, 0);
+    } else {
+      // if hours are set and minutes are not, just ignore the latter, as well
+      minutes = null;
+      this.date.setHours(0, 0, 0, 0);
+    }
 
     // set year to current if it is 'all'... for creating a real date, nothing else
     if (typeof year !== 'number') {
@@ -40,6 +53,10 @@ export default class Event {
     this.title = title;
     this.description = description;
     this.picture = picture;
+    this.id = id;
+
+    this.hours = hours;
+    this.minutes = minutes;
   }
   getYear() {
     return this.isYearly ? 'all' : this.date.getFullYear();
@@ -93,5 +110,8 @@ export default class Event {
   }
   isYearly() {
     return this.isYearly;
+  }
+  getId() {
+    return this.id;
   }
 }

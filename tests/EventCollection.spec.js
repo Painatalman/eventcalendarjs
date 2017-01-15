@@ -85,6 +85,9 @@ describe('Event Collection createAndAddEvent method', function()
               24: [{
                 date: anEvent.getRawDate(),
                 title: anEvent.getTitle(),
+                id: 0,
+                hours: null,
+                minutes: null,
                 description: anEvent.getDescription(),
                 picture: anEvent.getPicture(),
                 isYearly: false
@@ -94,6 +97,6 @@ describe('Event Collection createAndAddEvent method', function()
         });
 
       // another approach, more object-like
-      expect(collectionEvents[eventYear][eventMonth][eventDay][0]).to.deep.equal(anEvent);
+      expect(collectionEvents[eventYear][eventMonth][eventDay][0]).to.deep.equal(Object.assign(anEvent, {id: 0}));
     });
 });

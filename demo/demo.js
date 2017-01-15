@@ -126,7 +126,8 @@
 	  day: 21,
 	  month: 6,
 	  isYearly: true,
-	  year: 'all'
+	  year: 'all',
+	  title: 'My Birthday'
 	});
 	
 	window.calendar = calendar;
@@ -164,8 +165,10 @@
 	  // TODO: what is the multipleEvents parameter for?
 	  // firstDay is the first day of the week in the calendar: 1 is for "monday"
 	  // every eventDay must have a concrete date (day, month, year) and event title, with optional event info
-	  function Calendar(elementSelector, _ref) {
+	  function Calendar(elementSelector) {
 	    var _this = this;
+	
+	    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 	
 	    var year = _ref.year;
 	    var month = _ref.month;
@@ -515,11 +518,15 @@
 	
 	    // it is actually an object that will have years as keys
 	    this.events = {};
+	
+	    // the id for the next event to be added to the mix
+	    this.nextEventId = 0;
 	  }
 	
 	  /**
 	   * Creates an event.
 	   * This does NOT add an event to the event collection
+	   * Hence, this event will NOT increase the nextEventId count
 	   *
 	   * @param      {Object}  eventData  The event data required for an event creation
 	   * @return     {Event}   { A new Event object }
@@ -531,14 +538,16 @@
 	    value: function createEvent() {
 	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false };
 	
-	      return new _Event2.default(eventData);
+	      return new _Event2.default(Object.assign(eventData));
 	    }
 	  }, {
 	    key: "createAndAddEvent",
 	    value: function createAndAddEvent() {
 	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false };
 	
-	      this.addEvent(this.createEvent(eventData));
+	      this.addEvent(this.createEvent(Object.assign(eventData, { id: this.nextEventId })));
+	
+	      this.nextEventId += 1;
 	    }
 	  }, {
 	    key: "addEvent",
@@ -557,6 +566,10 @@
 	      if (!(day in events[year][month])) {
 	        events[year][month][day] = [];
 	      }
+	
+	      // if there is no event id, then it was created differently
+	      event.id = this.nextEventId;
+	      this.nextEventId++;
 	
 	      events[year][month][day].push(event);
 	    }
@@ -669,10 +682,14 @@
 	/**
 	 *  An event class for creating event objects that include a day, month, year, title, description and optional picture and isYearly
 	 *  In case an event is yearly, it returns 'all' in the getYear method
+	 *  TODO: force a day, month and year... without these, there is NO valid event
+	 *  TODO: validate hours and minutes
+	 *  TODO: create a setTime method
 	 */
 	
 	var Event = function () {
 	  // WARNING: month is in the 1-12 format, not the default 0-11 one
+	  // WARNING: if there are no hours, then minutes will be ignored even if set up
 	  function Event() {
 	    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 	
@@ -686,16 +703,32 @@
 	    var title = _ref$title === undefined ? "" : _ref$title;
 	    var _ref$description = _ref.description;
 	    var description = _ref$description === undefined ? "" : _ref$description;
-	    var picture = _ref.picture;
+	    var _ref$picture = _ref.picture;
+	    var picture = _ref$picture === undefined ? null : _ref$picture;
 	    var _ref$isYearly = _ref.isYearly;
 	    var isYearly = _ref$isYearly === undefined ? false : _ref$isYearly;
+	    var _ref$id = _ref.id;
+	    var id = _ref$id === undefined ? null : _ref$id;
+	    var _ref$hours = _ref.hours;
+	    var hours = _ref$hours === undefined ? null : _ref$hours;
+	    var _ref$minutes = _ref.minutes;
+	    var minutes = _ref$minutes === undefined ? null : _ref$minutes;
 	
 	    _classCallCheck(this, Event);
 	
 	    this.date = new Date();
 	    // reset the hours, too
-	    // TODO: set option for hours and minutes
-	    this.date.setHours(0, 0, 0, 0);
+	
+	    if (hours) {
+	      // hours are set to their value OR zero
+	      minutes = minutes || 0;
+	
+	      this.date.setHours(hours, minutes, 0, 0);
+	    } else {
+	      // if hours are set and minutes are not, just ignore the latter, as well
+	      minutes = null;
+	      this.date.setHours(0, 0, 0, 0);
+	    }
 	
 	    // set year to current if it is 'all'... for creating a real date, nothing else
 	    if (typeof year !== 'number') {
@@ -711,6 +744,10 @@
 	    this.title = title;
 	    this.description = description;
 	    this.picture = picture;
+	    this.id = id;
+	
+	    this.hours = hours;
+	    this.minutes = minutes;
 	  }
 	
 	  _createClass(Event, [{
@@ -800,6 +837,11 @@
 	    key: "isYearly",
 	    value: function isYearly() {
 	      return this.isYearly;
+	    }
+	  }, {
+	    key: "getId",
+	    value: function getId() {
+	      return this.id;
 	    }
 	  }]);
 	

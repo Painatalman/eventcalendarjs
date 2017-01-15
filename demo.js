@@ -72,7 +72,8 @@ calendar.createAndAddEvent({
   day: 21,
   month: 6,
   isYearly: true,
-  year: 'all'
+  year: 'all',
+  title: 'My Birthday'
 });
 
 window.calendar = calendar;

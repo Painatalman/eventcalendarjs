@@ -4,21 +4,27 @@ export default class EventCollection {
   constructor() {
     // it is actually an object that will have years as keys
     this.events = {};
+
+    // the id for the next event to be added to the mix
+    this.nextEventId = 0;
   }
 
   /**
    * Creates an event.
    * This does NOT add an event to the event collection
+   * Hence, this event will NOT increase the nextEventId count
    *
    * @param      {Object}  eventData  The event data required for an event creation
    * @return     {Event}   { A new Event object }
    */
-  createEvent(eventData = {day, month, year, title, description:"No description", picture, isYearly:false}) {
-    return new Event(eventData);
+  createEvent(eventData = {day, month, year, title, description:"No description", picture, isYearly:false, hours:null, minutes: null}) {
+    return new Event(Object.assign(eventData));
   }
 
-  createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false}) {
-    this.addEvent(this.createEvent(eventData));
+  createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false, hours:null, minutes: null}) {
+    this.addEvent(this.createEvent(Object.assign(eventData,{id: this.nextEventId})));
+
+    this.nextEventId += 1;
   }
 
   addEvent(event) {
@@ -36,6 +42,10 @@ export default class EventCollection {
     if (!(day in events[year][month])) {
       events[year][month][day] = [];
     }
+
+    // if there is no event id, then it was created differently
+    event.id = this.nextEventId;
+    this.nextEventId++;
 
     events[year][month][day].push(event);
 
