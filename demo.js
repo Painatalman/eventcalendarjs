@@ -200,7 +200,7 @@
 	    this.curDay = day;
 	    this.firstDayOfWeek = firstDayOfWeek || 1;
 	    this.curDate = curDate;
-	    // console.log(this.curDate.toString());
+	
 	    this.events = new _EventCollection2.default();
 	    /*
 	     although events have a date as a property, they will be organized in the following format, for mapping purposes:
@@ -217,6 +217,9 @@
 	    if (!this.element.classList.contains(_Calendar2.default["calendar-widget"])) {
 	      this.element.classList.add(_Calendar2.default["calendar-widget"]);
 	    }
+	
+	    // set up an addFormNode property
+	    this.addEventFormNode = null;
 	
 	    this.render();
 	    // console.log(this.getFirstDayOfCalendar().getDate());
@@ -250,6 +253,40 @@
 	
 	      return this.events.getEvents(deserialized);
 	    }
+	  }, {
+	    key: "hideAddEventForm",
+	    value: function hideAddEventForm() {
+	      this.addEventFormNode.classList.add(_Calendar2.default['calendar-widget__form--is-hidden']);
+	    }
+	    /**
+	     * Shows the form Node for adding an event
+	     * It is intended to be used with some parameters: year, month and day, that may be filled automatically
+	     *
+	     * @param      {<type>}  eventData  The event data
+	     */
+	
+	  }, {
+	    key: "showAddEventForm",
+	    value: function showAddEventForm() {
+	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { year: undefined, month: undefined, day: undefined };
+	
+	      var addEventFormNode = this.addEventFormNode;
+	
+	      ['year', 'month', 'day'].forEach(function (parameterName) {
+	        if (eventData[parameterName]) {
+	          addEventFormNode[parameterName].value = eventData[parameterName];
+	        }
+	      });
+	
+	      addEventFormNode.classList.remove(_Calendar2.default['calendar-widget__form--is-hidden']);
+	    }
+	    /**
+	     * Creates and returns the Header node for the calendar
+	     * This includes the picture and navigator, which also involve the calendar title node and calendar nav node
+	     *
+	     * @return     {<type>}  The header node.
+	     */
+	
 	  }, {
 	    key: "getHeaderNode",
 	    value: function getHeaderNode() {
@@ -285,6 +322,13 @@
 	
 	      return headerNode;
 	    }
+	    /**
+	     * Gets the calendar title node.
+	     * This includes the month and year that are being rendered
+	     *
+	     * @return     {<type>}  The calendar title node.
+	     */
+	
 	  }, {
 	    key: "getCalendarTitleNode",
 	    value: function getCalendarTitleNode() {
@@ -296,6 +340,15 @@
 	
 	      return titleSpan;
 	    }
+	    /**
+	     * Gets a calendar navigation node, which can be used to either go to the next or previous month.
+	     * This is actually part of a larger navigation node
+	     * This is called during the rendering of the calendar header node
+	     *
+	     * @param      {(boolean|string)}  isNext  Indicates if next
+	     * @return     {<type>}            The calendar navigation node.
+	     */
+	
 	  }, {
 	    key: "getCalendarNavNode",
 	    value: function getCalendarNavNode() {
@@ -316,6 +369,14 @@
 	
 	      return navSpan;
 	    }
+	    /**
+	     * This renders the TOP of the calendar day table
+	     * Do not confuse this with the Calendar.getHeaderNode method, which returns the main header of the calendar (picture + navigator + title)
+	     * In short, this is the table heading with the weekdays' names
+	     *
+	     * @return     {<type>}  The calendar header node.
+	     */
+	
 	  }, {
 	    key: "getCalendarHeaderNode",
 	    value: function getCalendarHeaderNode() {
@@ -336,6 +397,12 @@
 	
 	      return headerNode;
 	    }
+	    /**
+	     * Gets the calendar node for the calendar table itself
+	     *
+	     * @return     {<type>}  The calendar node.
+	     */
+	
 	  }, {
 	    key: "getCalendarNode",
 	    value: function getCalendarNode() {
@@ -362,6 +429,14 @@
 	
 	      return calendarWeekNode;
 	    }
+	    /**
+	     * Gets the calendar day node.
+	     * This also attaches the onclick event, which is used to show the addEventForm node, for now
+	     *
+	     * @param      {Date}  date    The date
+	     * @return     {<type>}  The calendar day node.
+	     */
+	
 	  }, {
 	    key: "getCalendarDayNode",
 	    value: function getCalendarDayNode(date) {
@@ -390,6 +465,12 @@
 	        // TODO: set a data attribute
 	      }
 	
+	      calendarDayNode.onclick = this.showAddEventForm.bind(this, {
+	        month: date.getMonth() + 1,
+	        year: date.getFullYear(),
+	        day: date.getDate()
+	      });
+	
 	      return calendarDayNode;
 	    }
 	  }, {
@@ -409,6 +490,37 @@
 	      return calendarDaysNode;
 	    }
 	  }, {
+	    key: "getCalendarAddEventFormNode",
+	    value: function getCalendarAddEventFormNode() {
+	      var calendarFormNode = document.createElement('form');
+	      var calendarReference = this;
+	
+	      calendarFormNode.classList.add(_Calendar2.default["calendar-widget__form"]);
+	      calendarFormNode.classList.add(_Calendar2.default["calendar-widget__form--is-hidden"]);
+	
+	      calendarFormNode.innerHTML = "\n    <div class=\"" + _Calendar2.default['calendar-widget__form-row'] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + "\" type='text' name='title' placeholder='title'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + "\" type='text' name='message' placeholder='message'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='year' placeholder='year' max=9999> /\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='month' placeholder='month' min=1 max=12> /\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='day' placeholder='day' min=1 max=31>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='hours' placeholder='hours' min=0 max=23>:\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + " \" type='number' name='minutes' placeholder='minutes' min=0 max=59>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <label class=\"" + _Calendar2.default["calendar-widget__form-label"] + "\">Is yearly?</label> <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-checkbox"] + "\" type='checkbox' name='isYearly'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input type='submit' value='submit'>\n      <button type='button' data-hide-form onclick=\"debugger;console.log('this'); calendarFormReference.hideAddEventForm()\">Hide</button>\n    </div>\n    ";
+	
+	      // to attach an event to a button
+	      calendarFormNode.querySelector('[data-hide-form]').onclick = calendarReference.hideAddEventForm.bind(calendarReference);
+	
+	      calendarFormNode.onsubmit = function (e) {
+	        e.preventDefault(); // prevent page refresh due to submission
+	
+	        calendarReference.createAndAddEvent({
+	          title: this.title.value,
+	          message: this.message.value,
+	          year: parseInt(this.year.value),
+	          month: parseInt(this.month.value),
+	          day: parseInt(this.day.value),
+	          hours: parseInt(this.hours.value),
+	          minutes: parseInt(this.minutes.value),
+	          isYearly: this.isYearly.checked
+	        });
+	      };
+	
+	      return calendarFormNode;
+	    }
+	  }, {
 	    key: "renderDayElement",
 	    value: function renderDayElement(day) {
 	      return day + " ";
@@ -421,9 +533,11 @@
 	
 	      // create header document fragment
 	      var node = document.createDocumentFragment();
+	      this.addEventFormNode = this.getCalendarAddEventFormNode();
 	
 	      node.appendChild(this.getHeaderNode());
 	      node.appendChild(this.getCalendarNode());
+	      node.appendChild(this.addEventFormNode);
 	
 	      this.element.appendChild(node);
 	
@@ -536,14 +650,14 @@
 	  _createClass(EventCollection, [{
 	    key: "createEvent",
 	    value: function createEvent() {
-	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false };
+	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false, hours: null, minutes: null };
 	
 	      return new _Event2.default(Object.assign(eventData));
 	    }
 	  }, {
 	    key: "createAndAddEvent",
 	    value: function createAndAddEvent() {
-	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false };
+	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false, hours: null, minutes: null };
 	
 	      this.addEvent(this.createEvent(Object.assign(eventData, { id: this.nextEventId })));
 	
@@ -889,7 +1003,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/**\n@use postcss-nested;\n**/\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n._20I9VEEji0s14PwqBp3tBd {\n  display: inline-block;\n\n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n\n  border: 1px solid black;\n}\n\n._24lt64jWBF7GU3wrTEsjlO {\n\n}\n\n.iZ5NERKXuDEBNZf4YWTWR {\n  width: 100%;\n}\n._2yaNxRA_OKEWfQ4QJHWOEL {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n._2HigPtClDF1kAFkKvX0Tes {\n text-align: center;\n  font-size: 1.3em;\n  padding: 12px 0;\n  margin-bottom: 12px;\n  box-shadow: 0 2px 5px black;\n  text-transform: uppercase;\n  font-weight: bold;\n}\n._2a3hDQbJCUej8fdLCnIl3u {\n  text-align: center;\n  width: 100%;\n}\n._1Kx9i6nPLghy3kISjsUO4y {\n\n  height: 35px;\n}\n._1mL5_0d8xEPxuWSNvTw-WC {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}\n.TEpu29FpFto3Y_gMU92uF {\n  color: lightgray;\n}\n\n._2tSmy4npf6HLp4pP0MlFXP {\n  padding: 0 32px;\n\n  cursor: pointer;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s {\n  float: left;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s::before {\n  content:\"\\25C3\";\n}\n\n.LndY2V7viDXupPQS2K9JP {\n  float: right;\n}\n\n.LndY2V7viDXupPQS2K9JP::before {\n  content:\"\\25B6\";\n}\n", ""]);
+	exports.push([module.id, "/**\n@use postcss-nested;\n**/\n\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\n._20I9VEEji0s14PwqBp3tBd {\n  position: relative;\n\n  display: inline-block;\n\n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n\n  border: 1px solid transparent;\n\n  box-shadow: 2px 2px 2px black;\n}\n\n._24lt64jWBF7GU3wrTEsjlO {\n\n}\n\n.iZ5NERKXuDEBNZf4YWTWR {\n  width: 100%;\n  min-height: 100%;\n}\n._2yaNxRA_OKEWfQ4QJHWOEL {\n  position: relative;\n  width: 100%;\n  height: 240px;\n  overflow: hidden;\n}\n._2HigPtClDF1kAFkKvX0Tes {\n text-align: center;\n  font-size: 1.3em;\n  padding: 12px 0;\n  margin-bottom: 12px;\n  box-shadow: 0 2px 5px black;\n  text-transform: uppercase;\n  font-weight: bold;\n}\n._2a3hDQbJCUej8fdLCnIl3u {\n  text-align: center;\n  width: 100%;\n}\n._1Kx9i6nPLghy3kISjsUO4y {\n\n  height: 35px;\n  cursor: pointer;\n}\n._1mL5_0d8xEPxuWSNvTw-WC {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}\n.TEpu29FpFto3Y_gMU92uF {\n  color: lightgray;\n}\n\n._2tSmy4npf6HLp4pP0MlFXP {\n  padding: 0 32px;\n\n  cursor: pointer;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s {\n  float: left;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s::before {\n  content:\"\\25C3\";\n}\n\n.LndY2V7viDXupPQS2K9JP {\n  float: right;\n}\n\n.LndY2V7viDXupPQS2K9JP::before {\n  content:\"\\25B6\";\n}\n\n._2xqMR2rBCDqE9wa71p_v5K {\n  position: absolute;\n  top: 0;\n\n  width: 100%;\n  height: 240px;\n  padding: 12px;\n  overflow: hidden;\n\n  background: white;\n\n  transition: height 250ms ease-in-out, padding 250ms ease-in-out 250ms;\n}\n\n.syNTZLOTwsRCWQID7n5Xm {\n  font-size: 16px;\n  width: 80%;\n}\n\n._1uNIq5kC5PmuF1ezvFZBaa {\n  width: 20%;\n}\n\n._2ofXAMY1YJNe-MwDI72LOa {\n  width: auto;\n}\n\n._3CPfGdbOlSRz-7DHRD7RAQ {\n\n}\n\n._1434u6FLprJrrACO_QmwoY {\n  margin-bottom: 6px;\n}\n\n._3bTa6V-vUZCTFX4vsSmMIY {\n  height: 0;\n  padding: 0;\n}\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -904,7 +1018,14 @@
 		"calendar-widget__day--is-from-another-month": "TEpu29FpFto3Y_gMU92uF",
 		"calendar-widget__nav": "_2tSmy4npf6HLp4pP0MlFXP",
 		"calendar-widget__nav--prev": "_1yQg1VhhWUU_lnggq6Lo_s",
-		"calendar-widget__nav--next": "LndY2V7viDXupPQS2K9JP"
+		"calendar-widget__nav--next": "LndY2V7viDXupPQS2K9JP",
+		"calendar-widget__form": "_2xqMR2rBCDqE9wa71p_v5K",
+		"calendar-widget__form-input": "syNTZLOTwsRCWQID7n5Xm",
+		"calendar-widget__form-input--is-small": "_1uNIq5kC5PmuF1ezvFZBaa",
+		"calendar-widget__form-input--is-checkbox": "_2ofXAMY1YJNe-MwDI72LOa",
+		"calendar-widget__form-label": "_3CPfGdbOlSRz-7DHRD7RAQ",
+		"calendar-widget__form-row": "_1434u6FLprJrrACO_QmwoY",
+		"calendar-widget__form--is-hidden": "_3bTa6V-vUZCTFX4vsSmMIY"
 	};
 
 /***/ },
