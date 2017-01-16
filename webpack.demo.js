@@ -1,6 +1,7 @@
 var path = require('path');
 const webpack = require('webpack');
 const postcssNested = require('postcss-nested');
+const postcssSimpleVars = require('postcss-simple-vars');
 
 module.exports = {
   entry:  path.resolve(__dirname, './demo.js'),
@@ -30,6 +31,6 @@ module.exports = {
     ]
   },
   postcss: function () {
-        return [postcssNested];
+        return [postcssNested, postcssSimpleVars];
     }
 };

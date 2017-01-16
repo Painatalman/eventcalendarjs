@@ -6,6 +6,8 @@
   "scripts": {
     "compile": "webpack",
     "demo": "webpack --config webpack.demo.js",
+    "demo-watch": "webpack --config webpack.demo.js -w",
+    "compile-watch": "webpack -w",
     "compile-and-demo": "npm run compile && npm run demo",
     "send-to-gh-pages": "git subtree push --prefix demo origin gh-pages",
     "test-events": "mocha --compilers js:babel-core/register ./tests/Event.spec.js",
@@ -39,6 +41,7 @@
     "mocha-testcheck": "^0.1.2",
     "postcss-loader": "^1.2.1",
     "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "3.0.0",
     "style-loader": "0.13.1",
     "webpack": "1.13.0",
     "webpack-dev-server": "1.14.1"

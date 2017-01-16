@@ -32,7 +32,7 @@ class Calendar {
     this.curDay = day;
     this.firstDayOfWeek = firstDayOfWeek || 1;
     this.curDate = curDate;
-    // console.log(this.curDate.toString());
+
     this.events = new EventCollection();
     /*
      although events have a date as a property, they will be organized in the following format, for mapping purposes:
@@ -50,6 +50,9 @@ class Calendar {
     if (!this.element.classList.contains(styles["calendar-widget"])) {
       this.element.classList.add(styles["calendar-widget"]);
     }
+
+    // set up an addFormNode property
+    this.addEventFormNode = null;
 
     this.render();
     // console.log(this.getFirstDayOfCalendar().getDate());
@@ -72,6 +75,32 @@ class Calendar {
   getEvents(deserialized=false) {
     return this.events.getEvents(deserialized);
   }
+  hideAddEventForm(){
+    this.addEventFormNode.classList.add(styles['calendar-widget__form--is-hidden']);
+  }
+  /**
+   * Shows the form Node for adding an event
+   * It is intended to be used with some parameters: year, month and day, that may be filled automatically
+   *
+   * @param      {<type>}  eventData  The event data
+   */
+  showAddEventForm(eventData = {year: undefined, month: undefined, day: undefined}) {
+    let addEventFormNode = this.addEventFormNode;
+
+    ['year', 'month', 'day'].forEach(function(parameterName){
+      if (eventData[parameterName]) {
+        addEventFormNode[parameterName].value = eventData[parameterName];
+      }
+    });
+
+    addEventFormNode.classList.remove(styles['calendar-widget__form--is-hidden']);
+  }
+  /**
+   * Creates and returns the Header node for the calendar
+   * This includes the picture and navigator, which also involve the calendar title node and calendar nav node
+   *
+   * @return     {<type>}  The header node.
+   */
   getHeaderNode() {
     let curDate = this.curDate;
 
@@ -105,6 +134,12 @@ class Calendar {
 
     return headerNode;
   }
+  /**
+   * Gets the calendar title node.
+   * This includes the month and year that are being rendered
+   *
+   * @return     {<type>}  The calendar title node.
+   */
   getCalendarTitleNode() {
     let titleSpan = document.createElement("span");
 
@@ -114,6 +149,14 @@ class Calendar {
 
     return titleSpan;
   }
+  /**
+   * Gets a calendar navigation node, which can be used to either go to the next or previous month.
+   * This is actually part of a larger navigation node
+   * This is called during the rendering of the calendar header node
+   *
+   * @param      {(boolean|string)}  isNext  Indicates if next
+   * @return     {<type>}            The calendar navigation node.
+   */
   getCalendarNavNode(isNext = true) {
     let navSpan = document.createElement("span");
     let modifierClassSuffix = isNext ? "next" : "prev";
@@ -128,6 +171,13 @@ class Calendar {
 
     return navSpan;
   }
+  /**
+   * This renders the TOP of the calendar day table
+   * Do not confuse this with the Calendar.getHeaderNode method, which returns the main header of the calendar (picture + navigator + title)
+   * In short, this is the table heading with the weekdays' names
+   *
+   * @return     {<type>}  The calendar header node.
+   */
   getCalendarHeaderNode() {
     let headerNode = document.createElement("tr");
     let date = this.getFirstDayOfCalendar();
@@ -146,6 +196,11 @@ class Calendar {
 
     return headerNode;
   }
+  /**
+   * Gets the calendar node for the calendar table itself
+   *
+   * @return     {<type>}  The calendar node.
+   */
   getCalendarNode() {
     let calendarNode = document.createElement("table");
 
@@ -168,6 +223,13 @@ class Calendar {
 
     return calendarWeekNode;
   }
+  /**
+   * Gets the calendar day node.
+   * This also attaches the onclick event, which is used to show the addEventForm node, for now
+   *
+   * @param      {Date}  date    The date
+   * @return     {<type>}  The calendar day node.
+   */
   getCalendarDayNode(date) {
     let calendarDayNode = document.createElement("td"),
       events = this.events.getEventsFor(date);
@@ -192,6 +254,12 @@ class Calendar {
       // TODO: set a data attribute
     }
 
+    calendarDayNode.onclick = this.showAddEventForm.bind(this, {
+      month: date.getMonth() + 1,
+      year: date.getFullYear(),
+      day: date.getDate()
+    });
+
     return calendarDayNode;
   }
   getCalendarDaysNode() {
@@ -208,6 +276,60 @@ class Calendar {
     // console.log(dateString);
     return calendarDaysNode;
   }
+  getCalendarAddEventFormNode() {
+    let calendarFormNode = document.createElement('form');
+    let calendarReference = this;
+
+    calendarFormNode.classList.add(styles["calendar-widget__form"]);
+    calendarFormNode.classList.add(styles["calendar-widget__form--is-hidden"]);
+
+    calendarFormNode.innerHTML = `
+    <div class="${styles['calendar-widget__form-row']}">
+      <input class="${styles["calendar-widget__form-input"]}" type='text' name='title' placeholder='title'>
+    </div>
+    <div class="${styles["calendar-widget__form-row"]}">
+      <input class="${styles["calendar-widget__form-input"]}" type='text' name='message' placeholder='message'>
+    </div>
+    <div class="${styles["calendar-widget__form-row"]}">
+      <input class="${styles["calendar-widget__form-input"]} ${styles["calendar-widget__form-input--is-small"]}" type='number' name='year' placeholder='year' max=9999> /
+      <input class="${styles["calendar-widget__form-input"]} ${styles["calendar-widget__form-input--is-small"]}" type='number' name='month' placeholder='month' min=1 max=12> /
+      <input class="${styles["calendar-widget__form-input"]} ${styles["calendar-widget__form-input--is-small"]}" type='number' name='day' placeholder='day' min=1 max=31>
+    </div>
+    <div class="${styles["calendar-widget__form-row"]}">
+      <input class="${styles["calendar-widget__form-input"]} ${styles["calendar-widget__form-input--is-small"]}" type='number' name='hours' placeholder='hours' min=0 max=23>:
+      <input class="${styles["calendar-widget__form-input"]} ${styles["calendar-widget__form-input--is-small"]} " type='number' name='minutes' placeholder='minutes' min=0 max=59>
+    </div>
+    <div class="${styles["calendar-widget__form-row"]}">
+      <label class="${styles["calendar-widget__form-label"]}">Is yearly?</label> <input class="${styles["calendar-widget__form-input"]} ${styles["calendar-widget__form-input--is-checkbox"]}" type='checkbox' name='isYearly'>
+    </div>
+    <div class="${styles["calendar-widget__form-row"]}">
+      <input type='submit' value='submit'>
+      <button type='button' data-hide-form onclick="debugger;console.log('this'); calendarFormReference.hideAddEventForm()">Hide</button>
+    </div>
+    `;
+
+    // to attach an event to a button
+    calendarFormNode.querySelector('[data-hide-form]').onclick = calendarReference.hideAddEventForm.bind(calendarReference);
+
+    
+
+    calendarFormNode.onsubmit = function(e) {
+      e.preventDefault(); // prevent page refresh due to submission
+
+      calendarReference.createAndAddEvent({
+        title: this.title.value,
+        message: this.message.value,
+        year: parseInt(this.year.value),
+        month: parseInt(this.month.value),
+        day: parseInt(this.day.value),
+        hours: parseInt(this.hours.value),
+        minutes: parseInt(this.minutes.value),
+        isYearly: this.isYearly.checked
+      });
+    }
+
+    return calendarFormNode;
+  }
   renderDayElement(day) {
     return day + " ";
   }
@@ -217,9 +339,11 @@ class Calendar {
 
     // create header document fragment
     let node = document.createDocumentFragment();
+    this.addEventFormNode = this.getCalendarAddEventFormNode();
 
     node.appendChild(this.getHeaderNode());
     node.appendChild(this.getCalendarNode());
+    node.appendChild(this.addEventFormNode);
 
     this.element.appendChild(node);
 

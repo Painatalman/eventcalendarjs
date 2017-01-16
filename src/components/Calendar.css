@@ -2,19 +2,29 @@
 @use postcss-nested;
 **/
 
+$header-height: 240px;
+$max-width: 450px;
+$min-width: 240px;
+
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 .calendar-widget {
+  position: relative;
+
   display: inline-block;
 
   width: 100%;
-  min-width: 240px;
-  max-width: 450px;
+  min-width: $min-width;
+  max-width: $max-width;
 
-  border: 1px solid black;
+  border: 1px solid transparent;
+
+  box-shadow: 2px 2px 2px black;
 }
 
 .calendar-widget__header {
@@ -23,10 +33,12 @@
 
 .calendar-widget__picture {
   width: 100%;
+  min-height: 100%;
 }
 .calendar-widget__picture-frame {
   position: relative;
   width: 100%;
+  height: $header-height;
   overflow: hidden;
 }
 .calendar-widget__title {
@@ -45,6 +57,7 @@
 .calendar-widget__day {
 
   height: 35px;
+  cursor: pointer;
 
   &--has-event {
     color: salmon;
@@ -76,4 +89,45 @@
     content:"\25B6";
   }
     }
+}
+
+.calendar-widget__form {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: $header-height;
+  padding: 12px;
+  overflow: hidden;
+
+  background: white;
+
+  transition: height 250ms ease-in-out, padding 250ms ease-in-out 250ms;
+
+  &-input {
+    font-size: 16px;
+    width: 80%;
+
+    &--is-small {
+      width: 20%;
+    }
+
+    &--is-checkbox {
+      width: auto;
+    }
+
+  }
+
+  &-label {
+
+  }
+
+  &-row {
+    margin-bottom: 6px;
+  }
+
+  &--is-hidden {
+    height: 0;
+    padding: 0;
+  }
 }
