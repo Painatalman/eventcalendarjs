@@ -12,7 +12,8 @@
     "send-to-gh-pages": "git subtree push --prefix demo origin gh-pages",
     "test-events": "mocha --compilers js:babel-core/register ./tests/Event.spec.js",
     "test-event-collections": "mocha --compilers js:babel-core/register ./tests/EventCollection.spec.js",
-    "test-calendars": "mocha --compilers js:babel-core/register --require ignore-styles ./tests/Calendar.spec.js"
+    "test-calendars": "mocha --compilers js:babel-core/register --require ignore-styles ./tests/Calendar.spec.js",
+    "test": "npm run test-events && npm run test-event-collections && npm run test-calendars"
   },
   "repository": {
     "type": "git",
