@@ -24,7 +24,8 @@ export default class EventCollection {
   createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false, hours:null, minutes: null}) {
     this.addEvent(this.createEvent(Object.assign(eventData,{id: this.nextEventId})));
 
-    this.nextEventId += 1;
+    // leave the nextEventId increase to the professionals... in this case, the universal addEvent method
+    // this.nextEventId += 1;
   }
 
   addEvent(event) {

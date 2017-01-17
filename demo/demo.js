@@ -661,7 +661,8 @@
 	
 	      this.addEvent(this.createEvent(Object.assign(eventData, { id: this.nextEventId })));
 	
-	      this.nextEventId += 1;
+	      // leave the nextEventId increase to the professionals... in this case, the universal addEvent method
+	      // this.nextEventId += 1;
 	    }
 	  }, {
 	    key: "addEvent",
