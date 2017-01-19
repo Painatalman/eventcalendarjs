@@ -36,7 +36,7 @@ describe('Calendar Object', function()
 
       document.body.appendChild(documentElement);
 
-      let aCalendar = new Calendar('#'+calendarElementId, {});
+      let aCalendar = new Calendar('#'+calendarElementId);
 
       expect(aCalendar)
         .to.not.be.undefined;
