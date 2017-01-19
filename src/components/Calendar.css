@@ -33,13 +33,14 @@ $min-width: 240px;
 
 .calendar-widget__picture {
   width: 100%;
-  min-height: 100%;
+  
 }
 .calendar-widget__picture-frame {
   position: relative;
   width: 100%;
-  height: $header-height;
-  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio*/
+  background-position: center center;
+  background-size: cover;
 }
 .calendar-widget__title {
  text-align: center;

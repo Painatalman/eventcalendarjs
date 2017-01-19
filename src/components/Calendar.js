@@ -107,7 +107,7 @@ class Calendar {
 
     let headerNode = document.createElement("header");
     let headerPictureFrameNode = document.createElement("div");
-    let headerPictureNode = document.createElement("img");
+    // let headerPictureNode = document.createElement("img");
     let headerTitleNode = document.createElement("div");
 
     let prevNavNode = this.getCalendarNavNode(false);
@@ -125,10 +125,10 @@ class Calendar {
     // picture-specific
     if (pictureUrl) {
       headerPictureFrameNode.classList.add(styles["calendar-widget__picture-frame"]);
-      headerPictureNode.classList.add(styles["calendar-widget__picture"]);
-      headerPictureNode.setAttribute("src", this.pictureUrl);
+      // headerPictureNode.classList.add(styles["calendar-widget__picture"]);
+      headerPictureFrameNode.style.backgroundImage = `url("${pictureUrl}")`;
 
-      headerPictureFrameNode.appendChild(headerPictureNode);
+      // headerPictureFrameNode.appendChild(headerPictureNode);
       headerNode.appendChild(headerPictureFrameNode);
     }
 
