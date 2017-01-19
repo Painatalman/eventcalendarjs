@@ -13,7 +13,7 @@ class Calendar {
   // firstDay is the first day of the week in the calendar: 1 is for "monday"
   // every eventDay must have a concrete date (day, month, year) and event title, with optional event info
   constructor(elementSelector, {
-    year, month, day, firstDayOfWeek = 1, multipleElements = false, pictureUrl, eventSettingObjects = []
+    year, month, day, firstDayOfWeek = 1, multipleElements = false, pictureUrl, pictureUrls, eventSettingObjects = []
   } = {}) {
     let curDate = new Date();
     year && curDate.setYear(year);
@@ -26,6 +26,7 @@ class Calendar {
     this.isRendered = false;
 
     this.pictureUrl = pictureUrl;
+    this.pictureUrls = pictureUrls;
     // TODO: set for multiple elements
     this.element = document.querySelector(elementSelector);
     // TODO: set data attributes
@@ -112,6 +113,7 @@ class Calendar {
     let prevNavNode = this.getCalendarNavNode(false);
     let nextNavNode = this.getCalendarNavNode(true);
     let titleNode = this.getCalendarTitleNode();
+    let pictureUrl = this.getCalendarImageSource();
 
     headerNode.classList.add(styles["calendar-widget__header"]);
     headerTitleNode.appendChild(prevNavNode);
@@ -121,7 +123,7 @@ class Calendar {
     headerTitleNode.classList.add(styles["calendar-widget__title"]);
 
     // picture-specific
-    if (this.pictureUrl) {
+    if (pictureUrl) {
       headerPictureFrameNode.classList.add(styles["calendar-widget__picture-frame"]);
       headerPictureNode.classList.add(styles["calendar-widget__picture"]);
       headerPictureNode.setAttribute("src", this.pictureUrl);
@@ -148,6 +150,34 @@ class Calendar {
     });
 
     return titleSpan;
+  }
+  /**
+   * Gets the calendar image source.
+   * First, it checks for a this.pictureUrls object with either an attribute corresponding to the current year and month
+   * If it does not exist, it checks for an 'all' and current month image url
+   * Finally, it returns a default this.pictureUrl or this.pictureUrls.default
+   */
+  getCalendarImageSource() {
+    let imageUrl;
+    let pictureUrls = this.pictureUrls;
+    let currentMonth = this.curDate.getMonth() + 1;
+    let currentYear = this.curDate.getFullYear();
+
+    if (pictureUrls 
+      && pictureUrls[currentYear]
+      && pictureUrls[currentYear][currentMonth]
+    ) {
+      imageUrl = this.pictureUrls[currentYear][currentMonth]
+    } else if (pictureUrls 
+      && pictureUrls['all']
+      && pictureUrls['all'][currentMonth]
+    ) {
+      imageUrl = pictureUrls['all'][currentMonth]
+    } else {
+      imageUrl = pictureUrls && pictureUrls['default'] || this.pictureUrl;
+    }
+
+    return imageUrl;
   }
   /**
    * Gets a calendar navigation node, which can be used to either go to the next or previous month.
