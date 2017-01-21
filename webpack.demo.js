@@ -13,6 +13,9 @@ module.exports = {
     // new webpack.optimize.UglifyJsPlugin()
   ],
   devtool:'source-map',
+  devServer: {
+    contentBase: "./demo",
+  }
   module: {
     loaders: [
       {

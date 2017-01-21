@@ -9,13 +9,17 @@ import styles from './Calendar.css';
  */
 class Calendar {
   // TODO: set an image for each month/year combo, or just for each month, with defaults
-  // TODO: what is the multipleEvents parameter for?
   // firstDay is the first day of the week in the calendar: 1 is for "monday"
   // every eventDay must have a concrete date (day, month, year) and event title, with optional event info
-  constructor(elementSelector, {
-    year, month, day, firstDayOfWeek = 1, multipleElements = false, pictureUrl, pictureUrls, eventSettingObjects = []
+  constructor(elementSelectorOrNode, {
+    year, month, day, firstDayOfWeek = 1, pictureUrl, pictureUrls, eventSettingObjects = []
   } = {}) {
+    // today's date
+    this.todayDate = new Date();
+    
+    // a date for the currently-displayed month
     let curDate = new Date();
+
     year && curDate.setYear(year);
     month && curDate.setMonth(parseInt(month) - 1);
     // set to firstDay of Month
@@ -27,11 +31,12 @@ class Calendar {
 
     this.pictureUrl = pictureUrl;
     this.pictureUrls = pictureUrls;
-    // TODO: set for multiple elements
-    this.element = document.querySelector(elementSelector);
+    this.element = (elementSelectorOrNode instanceof HTMLElement) && elementSelectorOrNode || document.querySelector(elementSelectorOrNode);
     // TODO: set data attributes
     this.curDay = day;
     this.firstDayOfWeek = firstDayOfWeek || 1;
+
+    // This is the currently-displayed date
     this.curDate = curDate;
 
     this.events = new EventCollection();
@@ -109,8 +114,6 @@ class Calendar {
    * @return     {<type>}  The header node.
    */
   getHeaderNode() {
-    let curDate = this.curDate;
-
     let headerNode = document.createElement("header");
     let headerPictureFrameNode = document.createElement("div");
     // let headerPictureNode = document.createElement("img");
@@ -269,13 +272,19 @@ class Calendar {
    */
   getCalendarDayNode(date) {
     let calendarDayNode = document.createElement("td"),
-      events = this.events.getEventsFor(date);
+      events = this.events.getEventsFor(date),
+      curDate = this.curDate,
+      todayDate = this.todayDate;
 
     calendarDayNode.classList.add(styles["calendar-widget__day"]);
 
     // check if this day belongs to the currently-displayed month
-    if (this.curDate.getMonth() !== date.getMonth()) {
+    if (curDate.getMonth() !== date.getMonth()) {
       calendarDayNode.classList.add(styles["calendar-widget__day--is-from-another-month"]);
+    }
+
+    if (todayDate.getFullYear() === date.getFullYear() && todayDate.getDate() === date.getDate() && todayDate.getMonth() === date.getMonth()) {
+        calendarDayNode.classList.add(styles["calendar-widget__day--is-current-day"]);
     }
 
     calendarDayNode.innerHTML = date.getDate();
@@ -392,6 +401,9 @@ class Calendar {
   render() {
     // reset element first
     this.element.innerHTML = "";
+
+    // update today's date
+    this.todayDate = new Date();
 
     // create header document fragment
     let node = document.createDocumentFragment();

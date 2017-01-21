@@ -63,12 +63,42 @@ describe('Calendar Object', function()
 
     it('should be initialized with the current month and year', function()
     {
-      
+      var cleanup = require('jsdom-global')();
+
+      documentElement = document.createElement('div');
+      documentElement.id = calendarElementId;
+
+      document.body.appendChild(documentElement);
+
+      let aCalendar = new Calendar('#'+calendarElementId);
+
+      expect(aCalendar.curDate.getMonth())
+        .to.equal(currentDate.getMonth());
+
+      expect(aCalendar.curDate.getYear())
+        .to.equal(currentDate.getYear());
+
+      cleanup();
     });
 
     it('should be initialized with no events', function()
     {
+      var cleanup = require('jsdom-global')();
 
+      documentElement = document.createElement('div');
+      documentElement.id = calendarElementId;
+
+      document.body.appendChild(documentElement);
+
+      let aCalendar = new Calendar('#'+calendarElementId);
+
+      expect(aCalendar.getEvents())
+        .to.deep.equal({});
+
+      expect(aCalendar.getEvents(true))
+        .to.deep.equal([]);
+
+      cleanup();
     });
 
   });

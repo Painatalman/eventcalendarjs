@@ -1,10 +1,9 @@
-/**
-@use postcss-nested;
-**/
-
-$header-height: 240px;
+$add-form-height: 200px;
 $max-width: 450px;
 $min-width: 240px;
+$default-background-color: white;
+$default-event-color: salmon;
+$default-low-highlight-color: lightgray;
 
 
 * {
@@ -22,7 +21,7 @@ $min-width: 240px;
   min-width: $min-width;
   max-width: $max-width;
 
-  border: 1px solid transparent;
+  background: $default-background-color;
 
   box-shadow: 2px 2px 2px black;
 }
@@ -43,13 +42,16 @@ $min-width: 240px;
   background-size: cover;
 }
 .calendar-widget__title {
- text-align: center;
-  font-size: 1.3em;
+  position: relative;
+
   padding: 12px 0;
   margin-bottom: 12px;
-  box-shadow: 0 2px 5px black;
+
+  text-align: center;
   text-transform: uppercase;
+  font-size: 1.3em;
   font-weight: bold;
+  box-shadow: 0 2px 5px black, 0 -2px 5px black;
 }
 .calendar-widget__days {
   text-align: center;
@@ -61,14 +63,19 @@ $min-width: 240px;
   cursor: pointer;
 
   &--has-event {
-    color: salmon;
+    color: $default-event-color;
     font-weight: bold;
     cursor: pointer;
     text-decoration: underline;
   }
 
   &--is-from-another-month {
-    color: lightgray;
+    color: $default-low-highlight-color;
+  }
+
+  &--is-current-day {
+    box-shadow: inset 0 0 4px $default-event-color;
+    border-radius: 10px;
   }
 }
 
@@ -97,11 +104,11 @@ $min-width: 240px;
   top: 0;
 
   width: 100%;
-  height: $header-height;
+  height: $add-form-height;
   padding: 12px;
   overflow: hidden;
 
-  background: white;
+  background: rgba(0,0,0,0.7);
 
   transition: height 250ms ease-in-out, padding 250ms ease-in-out 250ms;
 
