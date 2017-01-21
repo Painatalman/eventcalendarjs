@@ -73,6 +73,12 @@ class Calendar {
       if (callbacks && typeof(callbacks.error) === 'function'){ callbacks.error();}
     }
   }
+  /**
+   * Returns the events, either as a list or as an object
+   *
+   * @param      {boolean}  deserialized  The deserialized
+   * @return     {<type>}   The events.
+   */
   getEvents(deserialized=false) {
     return this.events.getEvents(deserialized);
   }
@@ -240,6 +246,7 @@ class Calendar {
 
     return calendarNode;
   }
+  /** generates a table row for the currently-displayed month **/
   getCalendarWeekNode(firstDay) {
     let date = new Date(firstDay);
     let calendarWeekNode = document.createElement("tr");
@@ -292,6 +299,9 @@ class Calendar {
 
     return calendarDayNode;
   }
+  /**
+  generate the main body for the calendar: the whole days table starting with the tbody
+   **/
   getCalendarDaysNode() {
     let date = this.getFirstDayOfCalendar();
     let lastDate = this.getLastDayOfCalendar();
@@ -306,6 +316,12 @@ class Calendar {
     // console.log(dateString);
     return calendarDaysNode;
   }
+  /**
+   * Gets the calendar add event form node.
+   * This might be the same calendar used to edit events
+   *
+   * @return     {<type>}  The calendar add event form node.
+   */
   getCalendarAddEventFormNode() {
     let calendarFormNode = document.createElement('form');
     let calendarReference = this;
@@ -314,6 +330,9 @@ class Calendar {
     calendarFormNode.classList.add(styles["calendar-widget__form--is-hidden"]);
 
     calendarFormNode.innerHTML = `
+    <div class="${styles['calendar-widget__form-row']}">
+      <input class="${styles["calendar-widget__form-input"]}" type='hidden' name='id' placeholder='title' value=''>
+    </div>
     <div class="${styles['calendar-widget__form-row']}">
       <input class="${styles["calendar-widget__form-input"]}" type='text' name='title' placeholder='title'>
     </div>
@@ -346,7 +365,7 @@ class Calendar {
     calendarFormNode.onsubmit = function(e) {
       e.preventDefault(); // prevent page refresh due to submission
 
-      calendarReference.createAndAddEvent({
+      let updatedData = {
         title: this.title.value,
         message: this.message.value,
         year: parseInt(this.year.value),
@@ -355,7 +374,14 @@ class Calendar {
         hours: parseInt(this.hours.value),
         minutes: parseInt(this.minutes.value),
         isYearly: this.isYearly.checked
-      });
+      };
+
+      if (this.id.value !== '') {
+        calendarReference.updateEvent(this.id.value, updatedData);
+      } else {
+        calendarReference.createAndAddEvent(updatedData);
+      }
+      
     }
 
     return calendarFormNode;
@@ -422,6 +448,9 @@ class Calendar {
 
     // re-render afterwards
     this.render();
+  }
+  updateEvent(eventId, eventData) {
+    this.events.updateEvent(eventId, eventData);
   }
 }
 

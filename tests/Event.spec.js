@@ -100,6 +100,74 @@ describe('Event Object', function()
       .to.equal('all');
   })
 
+  it('should allow initialization by providing a date parameter, which sets the year, month and day', function(){
+    let anYearlyEvent = new Event(
+    {
+      date: new Date(2016,7,12,11,23)
+    })
+
+    expect(anYearlyEvent.getYear()).to.equal(2016);
+    expect(anYearlyEvent.getMonth()).to.equal(8);
+    expect(anYearlyEvent.getDay()).to.equal(12);
+    expect(anYearlyEvent.getHours()).to.equal(11);
+    expect(anYearlyEvent.getMinutes()).to.equal(23);
+
+  });
+
+  it('should ignore month, day and year (if not set to "all") parameters if date is set. This is due to the fact that, if you changed the month only, you could get a wrong date, like 31st of february', function(){
+    let anYearlyEvent = new Event(
+    {
+      date: new Date(2016,7,12,11,23),
+      month: 10,
+      day: 1,
+      year: 2015
+    })
+
+    expect(anYearlyEvent.getYear()).to.equal(2016);
+    expect(anYearlyEvent.getMonth()).to.equal(8);
+    expect(anYearlyEvent.getDay()).to.equal(12);
+    expect(anYearlyEvent.getHours()).to.equal(11);
+    expect(anYearlyEvent.getMinutes()).to.equal(23);
+
+  });
+
+  it('getYear should STILL return "all" is isYearly is set to true', function(){
+    let anYearlyEvent = new Event(
+    {
+      date: new Date(2016,7,12,11,23),
+      month: 10,
+      day: 1,
+      year: 2015,
+      isYearly: true
+    })
+
+    expect(anYearlyEvent.getYear()).to.equal('all');
+    expect(anYearlyEvent.getMonth()).to.equal(8);
+    expect(anYearlyEvent.getDay()).to.equal(12);
+    expect(anYearlyEvent.getHours()).to.equal(11);
+    expect(anYearlyEvent.getMinutes()).to.equal(23);
+  });
+
+  it('should STILL allow hours and minutes to be overridden', function(){
+    let anYearlyEvent = new Event(
+    {
+      date: new Date(2016,7,12,11,11),
+      month: 10,
+      day: 1,
+      year: 2015,
+      hours: 23,
+      minutes: 24
+    })
+
+    expect(anYearlyEvent.getYear()).to.equal(2016);
+    expect(anYearlyEvent.getMonth()).to.equal(8);
+    expect(anYearlyEvent.getDay()).to.equal(12);
+    expect(anYearlyEvent.getHours()).to.equal(23);
+    expect(anYearlyEvent.getMinutes()).to.equal(24);
+
+  });
+
+
   /**
   it(name + ' should NOT work with strings that are NOT convertible to numbers', function () {
     expect(method('g8')).to.throw(Error);
