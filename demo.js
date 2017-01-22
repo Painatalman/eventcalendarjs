@@ -88,13 +88,14 @@
 	    11: 'https://lh3.googleusercontent.com/Siw_SQ97ZSFzN2_4JFPOpsVfmiNdWtEf6Sq7eFb2SO-gBmBpngDki8FC1X4ohDgBlzuPhjUxROqmWaKh0t01ucsZeLCf_DVqzDurV8XoGrFUra-s26NDP2Gb2YuEMWTcKZIdjgQ_KrcqataPUn-TjoVrhiQdvmsGOZMHBbaKbpVcHflhWjUvW8G1UAIjPkRaayOkBYe1S1huKBEC5FAKFhSZvD2YMCR1QIfQY9KvhSB-1W5DjcoacIHF0I_FBAwoL9IxHUg4UdIeYgTJuFnQ5jqhRsLcKP1uE__DWaJxICwHoVQAQNBhUbZPTlHbNqzftrMj8eE8pee4y2R4Q-as7nRwGNz_GcR8X08nZlsw7i1VtyhiJU9Exq31ITmtca8ylUqMyVIUInMiVF43Sb8M_8naELjoQy_qOAd5QK1a7yPc1PPp8CbnAwlO4-iG2K73evhfwx88H8cbj4sXG3Yzq3WAedjbqOx1wj0uOpUWk0cUWyFnGAwDtiQVpbRKKdUxb2laVooSe_2d5aK3dBp1GiXNsCSAQ7R0utKTcVvLCTACHhBxpR-P_msx3dIjRvDDpP4ST0zOzdjX_aAXstDZ1hXU9fbD5tkVmVnQQDNJd91Ch2oi=w443-h249-no'
 	  },
 	  2017: {
-	    1: 'https://lh3.googleusercontent.com/m-pSX--s9aTsNxZYezjTVtgHSIbLu0JB_aaPnhGD_Z0QcTYvOh2ifLhMW4lzXszh557fSmmZWPxzBH4-yup6SHlCCmH8-Aa4jWtczjeAG9rfqd6EEWbQJNfLOA49yKgoIljyitVjlmO-X-WlzSTOFKLj6tvZFIcxDefASWbWtLgGbAXOoIQ4cO0J9mvl18czWGh4cPkOsQLNg0e00CwurPB6NRAYM5UoxjN2i1yH4j8cnBcCMwVKs55E1UkYjTDMTQ7ZCit2qswxtX-dK7R3njnkyPCVH8s_8Y5NJs1ruvdmaqXsc1gjznnQ9Y6pGDmyHPlDdSOmxr86qlFUscFIRTvGH0x0xOdEh4psuovmWuIXHyDHCjkV1oO6pU60BRFgIulv_O0ymZHNia9m_mHdLfjaujTalXjikiDpE6SAavknAh6K2OOPDHZA7S52vrAUT4U_9RJwiCMl54z3tEVkaBEpfpBfSb1vB3otBjrk9CoWb7WkN33WsCEoRpwERpzLenwWg7b6bwsR3KWpWXukUQItVEPMN6x87Gfl_lyR9N-1_HSlAyb5QhBxEhG_UyTUhqZaUa-HyPR8BCSvK3bgSSIZ1WchGoGRLZaHYe9jwKKon7OZ=w116-h206-no',
+	    1: 'https://scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/16142824_10205766834689793_8222752294772988374_n.jpg?oh=366cce7cc6a065a7af3fd0ad841f7c05&oe=5916DF54',
 	    6: 'https://lh3.googleusercontent.com/9ZdGN5Of7qOhIJ1GrYmnpdsPuSM6vlqZP_yIE7KnPpablnEkJzhdixbm3XSloPMNozTOV5cWo46WIkXcbqogHYRm5Qp1h4ySsdkvCA38TAbgNrGInnWNZFniI7guCGeV4b1p0Wfxj-LacvpFCn4pg0QzferREVUfb-xM3F9McsrnGHNJVlB_K8Q_XC_vduQZGYqNaMKIcxrV1yW_A34VDSD26jcXpQouuqSt1I1S7rjg1Krl_aHVzj5ocE2VHJJUo4SuOXqfZOrczY-87ldNdt49avX3Qkecdm2mRY_LfnCgWzu1-_RpxwH6v6qkguyU1xVDFkFImvkQ02IBW-0F6LuYUAnD7fyOndlbDQ9QGTF98lfPNEj4TA0NU2IGXRihN6KlBFdLbAYs81p-937y_wLBu35GzKuhrNFQFEtGr0OiW7ZLxA-ofF7fThoQK8t7mr90546-Te3j9C7LooMSVOeNRC4a3Gf52qU9lUbDHXLNMw08y2b55fSYk3MojCJg7uCcKh-B8K8Azo9LeZ5Od5FPg-bHU_76Lsx3Pvp0Hq_d3TQfFhb8NUtOt7RTlsi6pWbqWAWKK6C3nNRRBbz1-ono2jb3Mnl_FlZn16IWiZQxcSll=w763-h430-no',
 	    10: 'https://lh3.googleusercontent.com/43vVeCDi3SzzoPl1qF1E1E2FPX_msL5E5dd-uh4EGUX9KBgZ69PhOEMYfe5Mc1YKO8F4ovSpzfe-HEM-ZenR05zhb19_-Mhp7SBryl7AISGcOGgNaUD83b-yWYpVFL7n1iTN1jH5xqzUIRoZGHWtPrSnJpzRKvfDSjexiAiWGF7oLxkaJRRCF5iFQk7iHK-uISuUKRjEwyvc6CBgFp42EMjp47dITpQwLxRssRp8PFk9kV5kWw_84SsqcorKDbJikX4kmFQJ9gZVsWHBOg5gGPv7cViIaDYTe2vBiOx6y91wSdOc1_U6ToYxN_VU9iTOjgu2QyGMc3_YydY9KSyWvB1-6-gcJR3G3bkPpTXcvrxVZ4Rv5JcAEDv1emK2oZ2uuisTBNBnx0ZERkgLxcZEeQ5vlSjb1I5ZkTxBq8bij80bpsIQEo0efFB-Ly5RM0X0ztpdgAWeCjxix-nsXIA9KlyYBvdO9bnbEySLemo5rLVyPNElurCQZYce_WmrB9cl25lMUbUC-yG2OWZsltXQlY71hS0V9F97D-8t57rQAiQ0dqTDj87btKn6tyQchHkOXu0Auj9KadYjAsHhojRsyuroJHrEK5A2Z5L8pOFcQLpll8vB=w355-h200-no'
 	  }
 	};
 	
-	var calendar = new _Calendar2.default("#app", { year: 2016, month: 4, pictureUrls: pictureUrls, eventSettingObjects: eventSettingObjects });
+	// var calendar = new Calendar("#app", {year:2016, month: 4, pictureUrls: pictureUrls, eventSettingObjects: eventSettingObjects});
+	var calendar = new _Calendar2.default("#app", { pictureUrls: pictureUrls, eventSettingObjects: eventSettingObjects });
 	
 	calendar.createAndAddEvent({
 	  day: 25,
@@ -120,7 +121,7 @@
 	  title: "Ano novo (geral)"
 	}, {
 	  success: function success() {
-	    console.log(JSON.stringify(calendar.getEvents(true)));
+	    // console.log(JSON.stringify(calendar.getEvents(true)));
 	  }
 	});
 	
@@ -132,7 +133,7 @@
 	  title: "Dia de los muertos"
 	}, {
 	  success: function success() {
-	    console.log(JSON.stringify(calendar.getEvents(true)));
+	    // console.log(JSON.stringify(calendar.getEvents(true)));
 	  }
 	});
 	
@@ -146,6 +147,12 @@
 	  isYearly: true,
 	  year: 'all',
 	  title: 'My Birthday'
+	});
+	
+	calendar.createAndAddEvent({
+	  date: new Date(2017, 0, 14),
+	  title: '2017 Holiday',
+	  description: 'The day we went to Meimoa'
 	});
 	
 	window.calendar = calendar;
@@ -180,10 +187,9 @@
 	 */
 	var Calendar = function () {
 	  // TODO: set an image for each month/year combo, or just for each month, with defaults
-	  // TODO: what is the multipleEvents parameter for?
 	  // firstDay is the first day of the week in the calendar: 1 is for "monday"
 	  // every eventDay must have a concrete date (day, month, year) and event title, with optional event info
-	  function Calendar(elementSelector) {
+	  function Calendar(elementSelectorOrNode) {
 	    var _this = this;
 	
 	    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -193,8 +199,6 @@
 	    var day = _ref.day;
 	    var _ref$firstDayOfWeek = _ref.firstDayOfWeek;
 	    var firstDayOfWeek = _ref$firstDayOfWeek === undefined ? 1 : _ref$firstDayOfWeek;
-	    var _ref$multipleElements = _ref.multipleElements;
-	    var multipleElements = _ref$multipleElements === undefined ? false : _ref$multipleElements;
 	    var pictureUrl = _ref.pictureUrl;
 	    var pictureUrls = _ref.pictureUrls;
 	    var _ref$eventSettingObje = _ref.eventSettingObjects;
@@ -202,7 +206,12 @@
 	
 	    _classCallCheck(this, Calendar);
 	
+	    // today's date
+	    this.todayDate = new Date();
+	
+	    // a date for the currently-displayed month
 	    var curDate = new Date();
+	
 	    year && curDate.setYear(year);
 	    month && curDate.setMonth(parseInt(month) - 1);
 	    // set to firstDay of Month
@@ -214,11 +223,12 @@
 	
 	    this.pictureUrl = pictureUrl;
 	    this.pictureUrls = pictureUrls;
-	    // TODO: set for multiple elements
-	    this.element = document.querySelector(elementSelector);
+	    this.element = elementSelectorOrNode instanceof HTMLElement && elementSelectorOrNode || document.querySelector(elementSelectorOrNode);
 	    // TODO: set data attributes
 	    this.curDay = day;
 	    this.firstDayOfWeek = firstDayOfWeek || 1;
+	
+	    // This is the currently-displayed date
 	    this.curDate = curDate;
 	
 	    this.events = new _EventCollection2.default();
@@ -266,6 +276,13 @@
 	        }
 	      }
 	    }
+	    /**
+	     * Returns the events, either as a list or as an object
+	     *
+	     * @param      {boolean}  deserialized  The deserialized
+	     * @return     {<type>}   The events.
+	     */
+	
 	  }, {
 	    key: "getEvents",
 	    value: function getEvents() {
@@ -310,8 +327,6 @@
 	  }, {
 	    key: "getHeaderNode",
 	    value: function getHeaderNode() {
-	      var curDate = this.curDate;
-	
 	      var headerNode = document.createElement("header");
 	      var headerPictureFrameNode = document.createElement("div");
 	      // let headerPictureNode = document.createElement("img");
@@ -460,6 +475,8 @@
 	
 	      return calendarNode;
 	    }
+	    /** generates a table row for the currently-displayed month **/
+	
 	  }, {
 	    key: "getCalendarWeekNode",
 	    value: function getCalendarWeekNode(firstDay) {
@@ -487,13 +504,19 @@
 	    key: "getCalendarDayNode",
 	    value: function getCalendarDayNode(date) {
 	      var calendarDayNode = document.createElement("td"),
-	          events = this.events.getEventsFor(date);
+	          events = this.events.getEventsFor(date),
+	          curDate = this.curDate,
+	          todayDate = this.todayDate;
 	
 	      calendarDayNode.classList.add(_Calendar2.default["calendar-widget__day"]);
 	
 	      // check if this day belongs to the currently-displayed month
-	      if (this.curDate.getMonth() !== date.getMonth()) {
+	      if (curDate.getMonth() !== date.getMonth()) {
 	        calendarDayNode.classList.add(_Calendar2.default["calendar-widget__day--is-from-another-month"]);
+	      }
+	
+	      if (todayDate.getFullYear() === date.getFullYear() && todayDate.getDate() === date.getDate() && todayDate.getMonth() === date.getMonth()) {
+	        calendarDayNode.classList.add(_Calendar2.default["calendar-widget__day--is-current-day"]);
 	      }
 	
 	      calendarDayNode.innerHTML = date.getDate();
@@ -519,6 +542,10 @@
 	
 	      return calendarDayNode;
 	    }
+	    /**
+	    generate the main body for the calendar: the whole days table starting with the tbody
+	     **/
+	
 	  }, {
 	    key: "getCalendarDaysNode",
 	    value: function getCalendarDaysNode() {
@@ -535,6 +562,13 @@
 	      // console.log(dateString);
 	      return calendarDaysNode;
 	    }
+	    /**
+	     * Gets the calendar add event form node.
+	     * This might be the same calendar used to edit events
+	     *
+	     * @return     {<type>}  The calendar add event form node.
+	     */
+	
 	  }, {
 	    key: "getCalendarAddEventFormNode",
 	    value: function getCalendarAddEventFormNode() {
@@ -544,7 +578,7 @@
 	      calendarFormNode.classList.add(_Calendar2.default["calendar-widget__form"]);
 	      calendarFormNode.classList.add(_Calendar2.default["calendar-widget__form--is-hidden"]);
 	
-	      calendarFormNode.innerHTML = "\n    <div class=\"" + _Calendar2.default['calendar-widget__form-row'] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + "\" type='text' name='title' placeholder='title'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + "\" type='text' name='message' placeholder='message'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='year' placeholder='year' max=9999> /\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='month' placeholder='month' min=1 max=12> /\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='day' placeholder='day' min=1 max=31>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='hours' placeholder='hours' min=0 max=23>:\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + " \" type='number' name='minutes' placeholder='minutes' min=0 max=59>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <label class=\"" + _Calendar2.default["calendar-widget__form-label"] + "\">Is yearly?</label> <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-checkbox"] + "\" type='checkbox' name='isYearly'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input type='submit' value='submit'>\n      <button type='button' data-hide-form onclick=\"debugger;console.log('this'); calendarFormReference.hideAddEventForm()\">Hide</button>\n    </div>\n    ";
+	      calendarFormNode.innerHTML = "\n    <div class=\"" + _Calendar2.default['calendar-widget__form-row'] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + "\" type='hidden' name='id' placeholder='title' value=''>\n    </div>\n    <div class=\"" + _Calendar2.default['calendar-widget__form-row'] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + "\" type='text' name='title' placeholder='title'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + "\" type='text' name='message' placeholder='message'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='year' placeholder='year' max=9999> /\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='month' placeholder='month' min=1 max=12> /\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='day' placeholder='day' min=1 max=31>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + "\" type='number' name='hours' placeholder='hours' min=0 max=23>:\n      <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-small"] + " \" type='number' name='minutes' placeholder='minutes' min=0 max=59>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <label class=\"" + _Calendar2.default["calendar-widget__form-label"] + "\">Is yearly?</label> <input class=\"" + _Calendar2.default["calendar-widget__form-input"] + " " + _Calendar2.default["calendar-widget__form-input--is-checkbox"] + "\" type='checkbox' name='isYearly'>\n    </div>\n    <div class=\"" + _Calendar2.default["calendar-widget__form-row"] + "\">\n      <input type='submit' value='submit'>\n      <button type='button' data-hide-form onclick=\"debugger;console.log('this'); calendarFormReference.hideAddEventForm()\">Hide</button>\n    </div>\n    ";
 	
 	      // to attach an event to a button
 	      calendarFormNode.querySelector('[data-hide-form]').onclick = calendarReference.hideAddEventForm.bind(calendarReference);
@@ -552,7 +586,7 @@
 	      calendarFormNode.onsubmit = function (e) {
 	        e.preventDefault(); // prevent page refresh due to submission
 	
-	        calendarReference.createAndAddEvent({
+	        var updatedData = {
 	          title: this.title.value,
 	          message: this.message.value,
 	          year: parseInt(this.year.value),
@@ -561,7 +595,13 @@
 	          hours: parseInt(this.hours.value),
 	          minutes: parseInt(this.minutes.value),
 	          isYearly: this.isYearly.checked
-	        });
+	        };
+	
+	        if (this.id.value !== '') {
+	          calendarReference.updateEvent(this.id.value, updatedData);
+	        } else {
+	          calendarReference.createAndAddEvent(updatedData);
+	        }
 	      };
 	
 	      return calendarFormNode;
@@ -576,6 +616,9 @@
 	    value: function render() {
 	      // reset element first
 	      this.element.innerHTML = "";
+	
+	      // update today's date
+	      this.todayDate = new Date();
 	
 	      // create header document fragment
 	      var node = document.createDocumentFragment();
@@ -643,6 +686,11 @@
 	      // re-render afterwards
 	      this.render();
 	    }
+	  }, {
+	    key: "updateEvent",
+	    value: function updateEvent(eventId, eventData) {
+	      this.events.updateEvent(eventId, eventData);
+	    }
 	  }]);
 	
 	  return Calendar;
@@ -696,23 +744,44 @@
 	  _createClass(EventCollection, [{
 	    key: "createEvent",
 	    value: function createEvent() {
-	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false, hours: null, minutes: null };
+	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { date: date, day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false, hours: null, minutes: null };
 	
-	      return new _Event2.default(Object.assign(eventData));
+	      return new _Event2.default(eventData);
 	    }
+	
+	    /**
+	     * Creates and adds an event event based on some event data.
+	     *
+	     * @param      {<type>}  eventData  The event data
+	     */
+	
 	  }, {
 	    key: "createAndAddEvent",
 	    value: function createAndAddEvent() {
-	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false, hours: null, minutes: null };
+	      var eventData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { date: date, day: day, month: month, year: year, title: title, description: "No description", picture: picture, isYearly: false, hours: null, minutes: null };
 	
 	      this.addEvent(this.createEvent(Object.assign(eventData, { id: this.nextEventId })));
 	
 	      // leave the nextEventId increase to the professionals... in this case, the universal addEvent method
 	      // this.nextEventId += 1;
 	    }
+	
+	    /**
+	     * Adds an event object to the collection
+	     * This also provides the event with an id defined by the collection. This will REPLACE an id attribute the Event object may have, for some reason.
+	     * To edit an event, use the EventCollection.updateEvent method
+	     *
+	     * @param      {Event}  event   The event
+	     */
+	
 	  }, {
 	    key: "addEvent",
 	    value: function addEvent(event) {
+	      var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	
+	      var _ref$keepId = _ref.keepId;
+	      var keepId = _ref$keepId === undefined ? false : _ref$keepId;
+	
 	      // TODO: check for instance of event
 	      var year = event.getYear(),
 	          month = event.getMonth(),
@@ -729,10 +798,115 @@
 	      }
 	
 	      // if there is no event id, then it was created differently
-	      event.id = this.nextEventId;
-	      this.nextEventId++;
+	      // keepId is intended for use with updateEvent
+	      if (!keepId) {
+	        event.id = this.nextEventId;
+	        this.nextEventId++;
+	      }
 	
 	      events[year][month][day].push(event);
+	    }
+	    /**
+	     * removes and returns an event based on an id
+	     * It also deletes properties with no events AFTER the event's been removed
+	     */
+	
+	  }, {
+	    key: "retrieveEvent",
+	    value: function retrieveEvent(eventId) {
+	      // this includes the 'all' keyword
+	      var yearsWithEvents = Object.keys(this.events);
+	      var yearsWithEventsLength = yearsWithEvents.length;
+	
+	      // first, this will only get targetEvent data
+	      var targetEvent = void 0;
+	
+	      // it's a pointer: changing this will change the whole events object
+	      var events = this.events;
+	
+	      for (var yearIterator = 0; yearIterator < yearsWithEventsLength; yearIterator++) {
+	
+	        var _year = yearsWithEvents[yearIterator];
+	        var yearObject = events[_year];
+	        var monthsWithEvents = Object.keys(yearObject);
+	        var monthsWithEventsLength = monthsWithEvents.length;
+	
+	        for (var monthIterator = 0; monthIterator < monthsWithEventsLength; monthIterator++) {
+	
+	          var _month = monthsWithEvents[monthIterator];
+	          var monthObject = yearObject[_month];
+	          var daysWithEvents = Object.keys(monthObject);
+	          var daysWithEventsLength = daysWithEvents.length;
+	
+	          // SHAME: down the rabbit hole...
+	          for (var dayIterator = 0; dayIterator < daysWithEventsLength; dayIterator++) {
+	
+	            var _day = daysWithEvents[dayIterator];
+	            var dayEventList = monthObject[_day];
+	            var dayEventListLength = dayEventList.length;
+	
+	            for (var eventIndex = 0; eventIndex < dayEventListLength; eventIndex++) {
+	              var event = dayEventList[eventIndex];
+	
+	              // FINALLY: the id check
+	              if (event.id === eventId) {
+	                targetEvent = event;
+	
+	                dayEventList.splice(eventIndex, 1);
+	
+	                break;
+	              }
+	            }
+	
+	            if (targetEvent) {
+	              // the list USED TO HAVE one element only... delete the index, now!
+	              if (dayEventListLength === 1) {
+	                delete events[_year][_month][_day];
+	              }
+	
+	              break;
+	            }
+	          }
+	
+	          if (targetEvent) {
+	            // must do Object.keys again...
+	            if (Object.keys(monthObject) < 1) {
+	              delete events[_year][_month];
+	            }
+	            break;
+	          }
+	        }
+	
+	        if (targetEvent) {
+	          // must do Object.keys again...
+	          if (Object.keys(yearObject) < 1) {
+	            delete events[_year];
+	          }
+	          break;
+	        }
+	      }
+	
+	      if (targetEvent) {
+	        targetEvent = new _Event2.default(targetEvent);
+	      }
+	
+	      return targetEvent;
+	    }
+	    /**
+	     * retrieves an event and re-adds it, forcing the id
+	     *
+	     * @param      {<type>}  eventId    The event identifier
+	     * @param      {<type>}  eventData  The event data
+	     */
+	
+	  }, {
+	    key: "updateEvent",
+	    value: function updateEvent(eventId, eventData) {
+	      var event = this.retrieveEvent(eventId);
+	
+	      event.update(eventData);
+	
+	      this.addEvent(event, { keepId: true });
 	    }
 	  }, {
 	    key: "getEvents",
@@ -749,15 +923,15 @@
 	          var deserializedEvents = [];
 	
 	          // SHAME: woah, triple loop of keys
-	          for (var _year in events) {
-	            if (events.hasOwnProperty(_year)) {
-	              var yearEvents = events[_year];
-	              for (var _month in yearEvents) {
-	                if (yearEvents.hasOwnProperty(_month)) {
-	                  var monthEvents = yearEvents[_month];
-	                  for (var _day in monthEvents) {
-	                    if (monthEvents.hasOwnProperty(_day)) {
-	                      var dayEvents = monthEvents[_day];
+	          for (var _year2 in events) {
+	            if (events.hasOwnProperty(_year2)) {
+	              var yearEvents = events[_year2];
+	              for (var _month2 in yearEvents) {
+	                if (yearEvents.hasOwnProperty(_month2)) {
+	                  var monthEvents = yearEvents[_month2];
+	                  for (var _day2 in monthEvents) {
+	                    if (monthEvents.hasOwnProperty(_day2)) {
+	                      var dayEvents = monthEvents[_day2];
 	
 	                      dayEvents.forEach(function (event) {
 	                        var newEvent = {};
@@ -869,6 +1043,7 @@
 	/**
 	 *  An event class for creating event objects that include a day, month, year, title, description and optional picture and isYearly
 	 *  In case an event is yearly, it returns 'all' in the getYear method
+	 *  Note that, if set, the date parameter overrides year, month and day, but not hours or minutes. This is due to the fact that changing the year, month or day may end up generating an upredictable result (like creating an event for march 31st, and then setting the month to april, which would result in the may 1st date of the corresponding year)
 	 *  TODO: force a day, month and year... without these, there is NO valid event
 	 *  TODO: validate hours and minutes
 	 *  TODO: create a setTime method
@@ -877,9 +1052,12 @@
 	var Event = function () {
 	  // WARNING: month is in the 1-12 format, not the default 0-11 one
 	  // WARNING: if there are no hours, then minutes will be ignored even if set up
+	  // TODO: force a type to date, if set
 	  function Event() {
 	    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 	
+	    var _ref$date = _ref.date;
+	    var date = _ref$date === undefined ? null : _ref$date;
 	    var _ref$day = _ref.day;
 	    var day = _ref$day === undefined ? getCurrentDay() : _ref$day;
 	    var _ref$month = _ref.month;
@@ -903,41 +1081,69 @@
 	
 	    _classCallCheck(this, Event);
 	
-	    this.date = new Date();
-	    // reset the hours, too
-	
-	    if (hours) {
-	      // hours are set to their value OR zero
-	      minutes = minutes || 0;
-	
-	      this.date.setHours(hours, minutes, 0, 0);
-	    } else {
-	      // if hours are set and minutes are not, just ignore the latter, as well
-	      minutes = null;
-	      this.date.setHours(0, 0, 0, 0);
-	    }
-	
-	    // set year to current if it is 'all'... for creating a real date, nothing else
-	    if (typeof year !== 'number') {
-	      year = getCurrentYear();
-	    }
-	
-	    // I guess the day should come last, for it may change everything else?
-	    this.date.setYear(year);
-	    this.date.setMonth(parseInt(month) - 1);
-	    this.date.setDate(day);
-	
-	    this.isYearly = isYearly;
-	    this.title = title;
-	    this.description = description;
-	    this.picture = picture;
-	    this.id = id;
-	
-	    this.hours = hours;
-	    this.minutes = minutes;
+	    this.initializeEventData({ date: date, day: day, month: month, year: year, title: title, description: description, picture: picture, isYearly: isYearly, id: id, hours: hours, minutes: minutes });
 	  }
 	
 	  _createClass(Event, [{
+	    key: "initializeEventData",
+	    value: function initializeEventData() {
+	      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	
+	      var _ref2$date = _ref2.date;
+	      var date = _ref2$date === undefined ? null : _ref2$date;
+	      var _ref2$day = _ref2.day;
+	      var day = _ref2$day === undefined ? getCurrentDay() : _ref2$day;
+	      var _ref2$month = _ref2.month;
+	      var month = _ref2$month === undefined ? getCurrentMonth() : _ref2$month;
+	      var _ref2$year = _ref2.year;
+	      var year = _ref2$year === undefined ? getCurrentYear() : _ref2$year;
+	      var _ref2$title = _ref2.title;
+	      var title = _ref2$title === undefined ? "" : _ref2$title;
+	      var _ref2$description = _ref2.description;
+	      var description = _ref2$description === undefined ? "" : _ref2$description;
+	      var _ref2$picture = _ref2.picture;
+	      var picture = _ref2$picture === undefined ? null : _ref2$picture;
+	      var _ref2$isYearly = _ref2.isYearly;
+	      var isYearly = _ref2$isYearly === undefined ? false : _ref2$isYearly;
+	      var _ref2$id = _ref2.id;
+	      var id = _ref2$id === undefined ? null : _ref2$id;
+	      var _ref2$hours = _ref2.hours;
+	      var hours = _ref2$hours === undefined ? null : _ref2$hours;
+	      var _ref2$minutes = _ref2.minutes;
+	      var minutes = _ref2$minutes === undefined ? null : _ref2$minutes;
+	
+	
+	      // if there is a Date object set as date parameter, then use that instead of a new Date() as your starting point
+	      this.date = date || new Date();
+	
+	      // adjust the hours and minutes BEFORE readjusting the date
+	      hours = hours || date && date.getHours() || 0;
+	      minutes = minutes || date && date.getMinutes() || 0;
+	      this.date.setHours(hours, minutes, 0, 0);
+	      this.hours = hours;
+	      this.minutes = minutes;
+	
+	      // set year to current if it is 'all'... for creating a real date, nothing else
+	      if (typeof year !== 'number') {
+	        year = getCurrentYear();
+	      }
+	
+	      // I guess the day should come last, for it may change everything else?
+	
+	      // if the date parameter is not set in the objects...
+	      if (!date) {
+	        this.date.setYear(year);
+	        this.date.setMonth(parseInt(month) - 1);
+	        this.date.setDate(day);
+	      }
+	
+	      this.isYearly = isYearly;
+	      this.title = title;
+	      this.description = description;
+	      this.picture = picture;
+	      this.id = id;
+	    }
+	  }, {
 	    key: "getYear",
 	    value: function getYear() {
 	      return this.isYearly ? 'all' : this.date.getFullYear();
@@ -966,6 +1172,16 @@
 	    key: "getTitle",
 	    value: function getTitle() {
 	      return this.title;
+	    }
+	  }, {
+	    key: "getHours",
+	    value: function getHours() {
+	      return this.hours;
+	    }
+	  }, {
+	    key: "getMinutes",
+	    value: function getMinutes() {
+	      return this.minutes;
 	    }
 	  }, {
 	    key: "getPicture",
@@ -1002,33 +1218,122 @@
 	    value: function setDay(day) {
 	      this.date.setDate(day);
 	    }
+	    /**
+	     * Sets the date. It expects a date as first parameter, or an object with the day, month and year parameters
+	     *
+	     * @param      {<type>}  dateOrObject  The date or object
+	     */
+	
 	  }, {
 	    key: "setDate",
 	    value: function setDate() {
-	      var dateOrObject = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { day: day, month: month, year: year };
+	      var dateOrObject = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { date: date, day: day, month: month, year: year };
 	
 	      if (dateOrObject instanceof Date) {
 	        this.date = dateOrObject;
 	      } else {
+	        var _date = dateOrObject.date;
 	        var _day = dateOrObject.day;
 	        var _month = dateOrObject.month;
 	        var _year = dateOrObject.year;
 	
 	
-	        _year && this.setYear(_year);
-	        _month && this.setMonth(_month);
-	        _day && this.setDay(_day);
+	        if (_date instanceof Date) {
+	          this.date = _date;
+	        } else {
+	          _year && this.setYear(_year);
+	          _month && this.setMonth(_month);
+	          _day && this.setDay(_day);
+	        }
 	      }
+	
+	      // readjust hours... this method is NOT for updating hours and minutes
+	      this.date.setHours(this.getHours(), this.getMinutes(), 0, 0);
 	    }
 	  }, {
-	    key: "isYearly",
-	    value: function isYearly() {
+	    key: "setTime",
+	    value: function setTime(_ref3) {
+	      var _ref3$hours = _ref3.hours;
+	      var hours = _ref3$hours === undefined ? undefined : _ref3$hours;
+	      var _ref3$minutes = _ref3.minutes;
+	      var minutes = _ref3$minutes === undefined ? undefined : _ref3$minutes;
+	
+	      this.hours = hours || this.hours;
+	      this.minutes = minutes || this.minutes;
+	
+	      this.date.setHours(hours, minutes, 0, 0);
+	    }
+	  }, {
+	    key: "setIsYearly",
+	    value: function setIsYearly() {
+	      var isYearly = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+	
+	      this.isYearly = isYearly;
+	    }
+	  }, {
+	    key: "getIsYearly",
+	    value: function getIsYearly() {
 	      return this.isYearly;
 	    }
 	  }, {
 	    key: "getId",
 	    value: function getId() {
 	      return this.id;
+	    }
+	    /**
+	     * gets data from the event in the same format as the one provided by EventCollection objects
+	     */
+	
+	  }, {
+	    key: "getEventData",
+	    value: function getEventData() {
+	      return {
+	        date: this.getRawDate(),
+	        isYearly: this.getIsYearly(),
+	        hours: this.getHours(),
+	        minutes: this.getMinutes(),
+	        title: this.getTitle(),
+	        description: this.getDescription(),
+	        id: this.getId(),
+	        picture: this.getPicture()
+	      };
+	    }
+	  }, {
+	    key: "update",
+	    value: function update() {
+	      var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	
+	      var _ref4$date = _ref4.date;
+	      var date = _ref4$date === undefined ? undefined : _ref4$date;
+	      var _ref4$day = _ref4.day;
+	      var day = _ref4$day === undefined ? undefined : _ref4$day;
+	      var _ref4$month = _ref4.month;
+	      var month = _ref4$month === undefined ? undefined : _ref4$month;
+	      var _ref4$year = _ref4.year;
+	      var year = _ref4$year === undefined ? undefined : _ref4$year;
+	      var _ref4$title = _ref4.title;
+	      var title = _ref4$title === undefined ? undefined : _ref4$title;
+	      var _ref4$description = _ref4.description;
+	      var description = _ref4$description === undefined ? undefined : _ref4$description;
+	      var _ref4$picture = _ref4.picture;
+	      var picture = _ref4$picture === undefined ? undefined : _ref4$picture;
+	      var _ref4$isYearly = _ref4.isYearly;
+	      var isYearly = _ref4$isYearly === undefined ? undefined : _ref4$isYearly;
+	      var _ref4$hours = _ref4.hours;
+	      var hours = _ref4$hours === undefined ? undefined : _ref4$hours;
+	      var _ref4$minutes = _ref4.minutes;
+	      var minutes = _ref4$minutes === undefined ? undefined : _ref4$minutes;
+	
+	
+	      date && this.setDate(date) || this.setDate({ year: year, month: month, day: day });
+	
+	      this.setTime({ hours: hours, minutes: minutes });
+	
+	      title && this.setTitle(title);
+	      description && this.setDescription(description);
+	      picture && this.setPicture(picture);
+	
+	      isYearly !== undefined && this.setIsYearly(isYearly);
 	    }
 	  }]);
 	
@@ -1076,7 +1381,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/**\n@use postcss-nested;\n**/\n\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\n._20I9VEEji0s14PwqBp3tBd {\n  position: relative;\n\n  display: inline-block;\n\n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n\n  border: 1px solid transparent;\n  background: white;\n\n  box-shadow: 2px 2px 2px black;\n}\n\n._24lt64jWBF7GU3wrTEsjlO {\n\n}\n\n.iZ5NERKXuDEBNZf4YWTWR {\n  width: 100%;\n  \n}\n._2yaNxRA_OKEWfQ4QJHWOEL {\n  position: relative;\n  width: 100%;\n  padding-bottom: 56.25%; /* 16:9 aspect ratio*/\n  background-position: center center;\n  background-size: cover;\n}\n._2HigPtClDF1kAFkKvX0Tes {\n text-align: center;\n  font-size: 1.3em;\n  padding: 12px 0;\n  margin-bottom: 12px;\n  box-shadow: 0 2px 5px black;\n  text-transform: uppercase;\n  font-weight: bold;\n}\n._2a3hDQbJCUej8fdLCnIl3u {\n  text-align: center;\n  width: 100%;\n}\n._1Kx9i6nPLghy3kISjsUO4y {\n\n  height: 35px;\n  cursor: pointer;\n}\n._1mL5_0d8xEPxuWSNvTw-WC {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}\n.TEpu29FpFto3Y_gMU92uF {\n  color: lightgray;\n}\n\n._2tSmy4npf6HLp4pP0MlFXP {\n  padding: 0 32px;\n\n  cursor: pointer;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s {\n  float: left;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s::before {\n  content:\"\\25C3\";\n}\n\n.LndY2V7viDXupPQS2K9JP {\n  float: right;\n}\n\n.LndY2V7viDXupPQS2K9JP::before {\n  content:\"\\25B6\";\n}\n\n._2xqMR2rBCDqE9wa71p_v5K {\n  position: absolute;\n  top: 0;\n\n  width: 100%;\n  height: 240px;\n  padding: 12px;\n  overflow: hidden;\n\n  background: white;\n\n  transition: height 250ms ease-in-out, padding 250ms ease-in-out 250ms;\n}\n\n.syNTZLOTwsRCWQID7n5Xm {\n  font-size: 16px;\n  width: 80%;\n}\n\n._1uNIq5kC5PmuF1ezvFZBaa {\n  width: 20%;\n}\n\n._2ofXAMY1YJNe-MwDI72LOa {\n  width: auto;\n}\n\n._3CPfGdbOlSRz-7DHRD7RAQ {\n\n}\n\n._1434u6FLprJrrACO_QmwoY {\n  margin-bottom: 6px;\n}\n\n._3bTa6V-vUZCTFX4vsSmMIY {\n  height: 0;\n  padding: 0;\n}\n", ""]);
+	exports.push([module.id, "* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\n._20I9VEEji0s14PwqBp3tBd {\n  position: relative;\n\n  display: inline-block;\n\n  width: 100%;\n  min-width: 240px;\n  max-width: 450px;\n\n  background: white;\n\n  box-shadow: 2px 2px 2px black;\n}\n\n._24lt64jWBF7GU3wrTEsjlO {\n\n}\n\n.iZ5NERKXuDEBNZf4YWTWR {\n  width: 100%;\n  \n}\n._2yaNxRA_OKEWfQ4QJHWOEL {\n  position: relative;\n  width: 100%;\n  padding-bottom: 56.25%; /* 16:9 aspect ratio*/\n  background-position: center center;\n  background-size: cover;\n}\n._2HigPtClDF1kAFkKvX0Tes {\n  position: relative;\n\n  padding: 12px 0;\n  margin-bottom: 12px;\n\n  text-align: center;\n  text-transform: uppercase;\n  font-size: 1.3em;\n  font-weight: bold;\n  box-shadow: 0 2px 5px black, 0 -2px 5px black;\n}\n._2a3hDQbJCUej8fdLCnIl3u {\n  text-align: center;\n  width: 100%;\n}\n._1Kx9i6nPLghy3kISjsUO4y {\n\n  height: 35px;\n  cursor: pointer;\n}\n._1mL5_0d8xEPxuWSNvTw-WC {\n  color: salmon;\n  font-weight: bold;\n  cursor: pointer;\n  text-decoration: underline;\n}\n.TEpu29FpFto3Y_gMU92uF {\n  color: lightgray;\n}\n._1mrDTgrRmMrRJT0ZXEd0Nn {\n  box-shadow: inset 0 0 4px salmon;\n  border-radius: 10px;\n}\n\n._2tSmy4npf6HLp4pP0MlFXP {\n  padding: 0 32px;\n\n  cursor: pointer;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s {\n  float: left;\n}\n\n._1yQg1VhhWUU_lnggq6Lo_s::before {\n  content:\"\\25C3\";\n}\n\n.LndY2V7viDXupPQS2K9JP {\n  float: right;\n}\n\n.LndY2V7viDXupPQS2K9JP::before {\n  content:\"\\25B6\";\n}\n\n._2xqMR2rBCDqE9wa71p_v5K {\n  position: absolute;\n  top: 0;\n\n  width: 100%;\n  height: 200px;\n  padding: 12px;\n  overflow: hidden;\n\n  background: rgba(0,0,0,0.7);\n\n  transition: height 250ms ease-in-out, padding 250ms ease-in-out 250ms;\n}\n\n.syNTZLOTwsRCWQID7n5Xm {\n  font-size: 16px;\n  width: 80%;\n}\n\n._1uNIq5kC5PmuF1ezvFZBaa {\n  width: 20%;\n}\n\n._2ofXAMY1YJNe-MwDI72LOa {\n  width: auto;\n}\n\n._3CPfGdbOlSRz-7DHRD7RAQ {\n\n}\n\n._1434u6FLprJrrACO_QmwoY {\n  margin-bottom: 6px;\n}\n\n._3bTa6V-vUZCTFX4vsSmMIY {\n  height: 0;\n  padding: 0;\n}\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -1089,6 +1394,7 @@
 		"calendar-widget__day": "_1Kx9i6nPLghy3kISjsUO4y",
 		"calendar-widget__day--has-event": "_1mL5_0d8xEPxuWSNvTw-WC",
 		"calendar-widget__day--is-from-another-month": "TEpu29FpFto3Y_gMU92uF",
+		"calendar-widget__day--is-current-day": "_1mrDTgrRmMrRJT0ZXEd0Nn",
 		"calendar-widget__nav": "_2tSmy4npf6HLp4pP0MlFXP",
 		"calendar-widget__nav--prev": "_1yQg1VhhWUU_lnggq6Lo_s",
 		"calendar-widget__nav--next": "LndY2V7viDXupPQS2K9JP",
