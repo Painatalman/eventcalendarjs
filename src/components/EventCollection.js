@@ -17,18 +17,30 @@ export default class EventCollection {
    * @param      {Object}  eventData  The event data required for an event creation
    * @return     {Event}   { A new Event object }
    */
-  createEvent(eventData = {day, month, year, title, description:"No description", picture, isYearly:false, hours:null, minutes: null}) {
-    return new Event(Object.assign(eventData));
+  createEvent(eventData = {date, day, month, year, title, description:"No description", picture, isYearly:false, hours:null, minutes: null}) {
+    return new Event(eventData);
   }
 
-  createAndAddEvent(eventData={day, month, year, title, description:"No description", picture, isYearly:false, hours:null, minutes: null}) {
+  /**
+   * Creates and adds an event event based on some event data.
+   *
+   * @param      {<type>}  eventData  The event data
+   */
+  createAndAddEvent(eventData={date, day, month, year, title, description:"No description", picture, isYearly:false, hours:null, minutes: null}) {
     this.addEvent(this.createEvent(Object.assign(eventData,{id: this.nextEventId})));
 
     // leave the nextEventId increase to the professionals... in this case, the universal addEvent method
     // this.nextEventId += 1;
   }
 
-  addEvent(event) {
+  /**
+   * Adds an event object to the collection
+   * This also provides the event with an id defined by the collection. This will REPLACE an id attribute the Event object may have, for some reason.
+   * To edit an event, use the EventCollection.updateEvent method
+   *
+   * @param      {Event}  event   The event
+   */
+  addEvent(event, {keepId=false}={}) {
     // TODO: check for instance of event
     const year = event.getYear(),
           month = event.getMonth(),
@@ -45,11 +57,109 @@ export default class EventCollection {
     }
 
     // if there is no event id, then it was created differently
-    event.id = this.nextEventId;
-    this.nextEventId++;
+    // keepId is intended for use with updateEvent
+    if (!keepId) {
+      event.id = this.nextEventId;
+      this.nextEventId++;
+    }
 
     events[year][month][day].push(event);
+  }
+  /**
+   * removes and returns an event based on an id
+   * It also deletes properties with no events AFTER the event's been removed
+   */
+  retrieveEvent(eventId) {
+    // this includes the 'all' keyword
+    let yearsWithEvents = Object.keys(this.events);
+    let yearsWithEventsLength = yearsWithEvents.length;
 
+    // first, this will only get targetEvent data
+    let targetEvent;
+
+    // it's a pointer: changing this will change the whole events object
+    let events = this.events;
+
+    for (let yearIterator=0; yearIterator < yearsWithEventsLength; yearIterator++) {
+
+      let year = yearsWithEvents[yearIterator];
+      let yearObject = events[year];
+      let monthsWithEvents = Object.keys(yearObject);
+      let monthsWithEventsLength = monthsWithEvents.length;
+
+      for (let monthIterator=0; monthIterator < monthsWithEventsLength; monthIterator++) {
+
+        let month = monthsWithEvents[monthIterator];
+        let monthObject = yearObject[month];
+        let daysWithEvents = Object.keys(monthObject);
+        let daysWithEventsLength = daysWithEvents.length;
+
+        // SHAME: down the rabbit hole...
+        for (let dayIterator=0; dayIterator < daysWithEventsLength; dayIterator++) {
+
+          let day = daysWithEvents[dayIterator];
+          let dayEventList = monthObject[day];
+          let dayEventListLength = dayEventList.length;
+
+          for (let eventIndex=0; eventIndex < dayEventListLength; eventIndex++) {
+            let event = dayEventList[eventIndex];
+
+            // FINALLY: the id check
+            if (event.id === eventId) {
+              targetEvent = event;
+
+              dayEventList.splice(eventIndex, 1);
+
+              break;
+            }
+          }
+
+          if (targetEvent) {
+            // the list USED TO HAVE one element only... delete the index, now!
+            if (dayEventListLength === 1) {
+              delete events[year][month][day];
+            }
+
+            break;
+          }
+        }
+
+        if (targetEvent) {
+          // must do Object.keys again...
+          if (Object.keys(monthObject) < 1) {
+            delete events[year][month];
+          }
+          break;
+        }
+      }
+
+      if (targetEvent) {
+        // must do Object.keys again...
+        if (Object.keys(yearObject) < 1) {
+          delete events[year];
+        }
+        break;
+      }
+    }
+
+    if (targetEvent) {
+      targetEvent = new Event(targetEvent);
+    }
+
+    return targetEvent;
+  }
+  /**
+   * retrieves an event and re-adds it, forcing the id
+   *
+   * @param      {<type>}  eventId    The event identifier
+   * @param      {<type>}  eventData  The event data
+   */
+  updateEvent(eventId, eventData) {
+    let event = this.retrieveEvent(eventId);
+
+    event.update(eventData);
+
+    this.addEvent(event, {keepId: true});
   }
   getEvents(deserialize=false) {
     if (!deserialize) {
