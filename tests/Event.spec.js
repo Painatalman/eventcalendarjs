@@ -8,15 +8,13 @@ require('mocha-testcheck')
 
 import Event from "../src/components/Event.js";
 
-
-
 describe('Event Object', function()
 {
 
   let anEvent = new Event({});
   let currentDate = new Date();
 
-  describe('When initialized with no specific parameters', function() {
+  describe('initialization', function() {
     beforeEach(function(){
       anEvent = new Event();
       currentDate = new Date();
@@ -42,6 +40,16 @@ describe('Event Object', function()
       expect(anEvent.getDay())
         .to.equal(currentDate.getDate());
     });
+
+    it('should return "all" when an event is yearly', function()
+    {
+      let anYearlyEvent = new Event(
+      {
+        isYearly: true
+      })
+      expect(anYearlyEvent.getYear())
+        .to.equal('all');
+    })
 
     it('should be initialized with the current month, by default, with 1 being January and 12 being December', function()
     {
@@ -90,15 +98,62 @@ describe('Event Object', function()
     })
   });
 
-  it('should return "all" when an event is yearly', function()
-  {
-    let anYearlyEvent = new Event(
-    {
-      isYearly: true
-    })
-    expect(anYearlyEvent.getYear())
-      .to.equal('all');
-  })
+  describe('Set date', function(){
+    beforeEach(function(){
+      anEvent = new Event({
+        year: 2015,
+        month: 11,
+        day: 12,
+        hours: 22,
+        minutes: 12
+      });
+    });
+
+    it('should allow a full date replacement without changing the time, by calling a date as the first parameter', function(){
+
+      anEvent.setDate({
+        date: new Date(2014, 11, 13, 21, 10, 12, 12)
+      });
+
+      expect(anEvent.getRawDate()).to.deep.equal(new Date(2014, 11, 13, 22, 12));
+      expect(anEvent.getYear()).to.equal(2014);
+      expect(anEvent.getMonth()).to.equal(12);
+      expect(anEvent.getDay()).to.equal(13);
+      expect(anEvent.getHours()).to.equal(22);
+      expect(anEvent.getMinutes()).to.equal(12);
+    });
+
+    it('should allow a full date replacement without changing the time, by calling an object with the date property', function(){
+
+      anEvent.setDate(new Date(2014, 11, 13, 21, 10, 12, 12));
+
+      expect(anEvent.getRawDate()).to.deep.equal(new Date(2014, 11, 13, 22, 12));
+      expect(anEvent.getYear()).to.equal(2014);
+      expect(anEvent.getMonth()).to.equal(12);
+      expect(anEvent.getDay()).to.equal(13);
+      expect(anEvent.getHours()).to.equal(22);
+      expect(anEvent.getMinutes()).to.equal(12);
+    });
+
+    it('should prioritize the date parameter against the year, month and day parameters', function(){
+
+      anEvent.setDate({
+        date: new Date(2020, 9, 10, 21, 10, 12, 12),
+        year: 2018,
+        month: 2,
+        day: 3
+      });
+
+      expect(anEvent.getRawDate()).to.deep.equal(new Date(2020, 9, 10, 22, 12));
+      expect(anEvent.getYear()).to.equal(2020);
+      expect(anEvent.getMonth()).to.equal(10);
+      expect(anEvent.getDay()).to.equal(10);
+      expect(anEvent.getHours()).to.equal(22);
+      expect(anEvent.getMinutes()).to.equal(12);
+    });
+  });
+
+  
 
   it('should allow initialization by providing a date parameter, which sets the year, month and day', function(){
     let anYearlyEvent = new Event(
@@ -165,6 +220,138 @@ describe('Event Object', function()
     expect(anYearlyEvent.getHours()).to.equal(23);
     expect(anYearlyEvent.getMinutes()).to.equal(24);
 
+  });
+
+  describe('getEventData', function(){
+    beforeEach(function(){
+      let eventOptions = {}
+
+      anEvent = new Event(eventOptions);
+    });
+
+    it('should return an object', function(){
+      expect(anEvent.getEventData()).to.be.an.object;
+    })
+
+    it('should return proper data object', function(){
+      let eventOptions = {
+        day: 21,
+        month: 3,
+        year: 2015,
+        title: '21st of March',
+        description: 'Some day',
+        hours: 11,
+        minutes: 34
+      };
+
+      anEvent = new Event(eventOptions);
+
+      expect(anEvent.getEventData()).to.deep.equal({
+        date: new Date(2015, 2, 21, 11, 34, 0, 0),
+        title: '21st of March',
+        description: 'Some day',
+        hours: 11,
+        minutes: 34,
+        isYearly: false,
+        picture: null,
+        id: null
+      });
+    });
+
+    it('should return proper data object EVEN when event is yearly', function(){
+      let eventOptions = {
+        day: 21,
+        month: 3,
+        year: 2015,
+        title: '21st of March',
+        description: 'Some day',
+        hours: 11,
+        minutes: 34,
+        isYearly: true
+      };
+
+      anEvent = new Event(eventOptions);
+
+      expect(anEvent.getEventData()).to.deep.equal({
+        date: new Date(2015, 2, 21, 11, 34, 0, 0),
+        title: '21st of March',
+        description: 'Some day',
+        hours: 11,
+        minutes: 34,
+        isYearly: true,
+        picture: null,
+        id: null
+      });
+    });
+  });
+
+    describe('update', function(){
+    beforeEach(function(){
+      let eventOptions = {
+        day: 21,
+        month: 3,
+        year: 2015,
+        title: '21st of March',
+        description: 'Some day',
+        hours: 11,
+        minutes: 34
+      };
+
+      anEvent = new Event(eventOptions);
+    });
+
+
+    it('should update an object accordingly', function(){
+
+      let newEventData = {
+        year: 2016,
+        month: 4,
+        day: 12,
+        hours: 21,
+        minutes: 22,
+        picture: 'http://placehold.it/230/230',
+        title: 'Another title',
+        description: 'Another description'
+      };
+
+      anEvent.update(newEventData);
+
+      expect(anEvent.getEventData()).to.deep.equal({
+        date: new Date(2016, 3, 12, 21, 22, 0, 0),
+        title: 'Another title',
+        description: 'Another description',
+        hours: 21,
+        minutes: 22,
+        isYearly: false,
+        picture: 'http://placehold.it/230/230',
+        id: null
+      });
+    });
+
+    it('should return proper data object EVEN when event is yearly', function(){
+      let newEventData = {
+        year: 2016,
+        month: 4,
+        day: 12,
+        hours: 21,
+        minutes: 22,
+        picture: 'http://placehold.it/230/230',
+        isYearly: true
+      };
+
+      anEvent.update(newEventData);
+
+      expect(anEvent.getEventData()).to.deep.equal({
+        date: new Date(2016, 3, 12, 21, 22, 0, 0),
+        title: '21st of March',
+        description: 'Some day',
+        hours: 21,
+        minutes: 22,
+        isYearly: true,
+        picture: 'http://placehold.it/230/230',
+        id: null
+      });
+    });
   });
 
 
