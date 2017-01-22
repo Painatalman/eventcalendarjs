@@ -13,9 +13,6 @@ module.exports = {
     library: 'eventcalendarjs',
     umdNamedDefine: true
   },
-  devServer: {
-    contentBase: "./demo",
-  },
   plugins: [
     new webpack.optimize.UglifyJsPlugin()
   ],

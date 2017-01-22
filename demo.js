@@ -37,13 +37,15 @@ let pictureUrls = {
     11: 'https://lh3.googleusercontent.com/Siw_SQ97ZSFzN2_4JFPOpsVfmiNdWtEf6Sq7eFb2SO-gBmBpngDki8FC1X4ohDgBlzuPhjUxROqmWaKh0t01ucsZeLCf_DVqzDurV8XoGrFUra-s26NDP2Gb2YuEMWTcKZIdjgQ_KrcqataPUn-TjoVrhiQdvmsGOZMHBbaKbpVcHflhWjUvW8G1UAIjPkRaayOkBYe1S1huKBEC5FAKFhSZvD2YMCR1QIfQY9KvhSB-1W5DjcoacIHF0I_FBAwoL9IxHUg4UdIeYgTJuFnQ5jqhRsLcKP1uE__DWaJxICwHoVQAQNBhUbZPTlHbNqzftrMj8eE8pee4y2R4Q-as7nRwGNz_GcR8X08nZlsw7i1VtyhiJU9Exq31ITmtca8ylUqMyVIUInMiVF43Sb8M_8naELjoQy_qOAd5QK1a7yPc1PPp8CbnAwlO4-iG2K73evhfwx88H8cbj4sXG3Yzq3WAedjbqOx1wj0uOpUWk0cUWyFnGAwDtiQVpbRKKdUxb2laVooSe_2d5aK3dBp1GiXNsCSAQ7R0utKTcVvLCTACHhBxpR-P_msx3dIjRvDDpP4ST0zOzdjX_aAXstDZ1hXU9fbD5tkVmVnQQDNJd91Ch2oi=w443-h249-no'
   },
   2017: {
-    1: 'https://lh3.googleusercontent.com/m-pSX--s9aTsNxZYezjTVtgHSIbLu0JB_aaPnhGD_Z0QcTYvOh2ifLhMW4lzXszh557fSmmZWPxzBH4-yup6SHlCCmH8-Aa4jWtczjeAG9rfqd6EEWbQJNfLOA49yKgoIljyitVjlmO-X-WlzSTOFKLj6tvZFIcxDefASWbWtLgGbAXOoIQ4cO0J9mvl18czWGh4cPkOsQLNg0e00CwurPB6NRAYM5UoxjN2i1yH4j8cnBcCMwVKs55E1UkYjTDMTQ7ZCit2qswxtX-dK7R3njnkyPCVH8s_8Y5NJs1ruvdmaqXsc1gjznnQ9Y6pGDmyHPlDdSOmxr86qlFUscFIRTvGH0x0xOdEh4psuovmWuIXHyDHCjkV1oO6pU60BRFgIulv_O0ymZHNia9m_mHdLfjaujTalXjikiDpE6SAavknAh6K2OOPDHZA7S52vrAUT4U_9RJwiCMl54z3tEVkaBEpfpBfSb1vB3otBjrk9CoWb7WkN33WsCEoRpwERpzLenwWg7b6bwsR3KWpWXukUQItVEPMN6x87Gfl_lyR9N-1_HSlAyb5QhBxEhG_UyTUhqZaUa-HyPR8BCSvK3bgSSIZ1WchGoGRLZaHYe9jwKKon7OZ=w116-h206-no',
+    1: 'https://scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/16142824_10205766834689793_8222752294772988374_n.jpg?oh=366cce7cc6a065a7af3fd0ad841f7c05&oe=5916DF54',
     6: 'https://lh3.googleusercontent.com/9ZdGN5Of7qOhIJ1GrYmnpdsPuSM6vlqZP_yIE7KnPpablnEkJzhdixbm3XSloPMNozTOV5cWo46WIkXcbqogHYRm5Qp1h4ySsdkvCA38TAbgNrGInnWNZFniI7guCGeV4b1p0Wfxj-LacvpFCn4pg0QzferREVUfb-xM3F9McsrnGHNJVlB_K8Q_XC_vduQZGYqNaMKIcxrV1yW_A34VDSD26jcXpQouuqSt1I1S7rjg1Krl_aHVzj5ocE2VHJJUo4SuOXqfZOrczY-87ldNdt49avX3Qkecdm2mRY_LfnCgWzu1-_RpxwH6v6qkguyU1xVDFkFImvkQ02IBW-0F6LuYUAnD7fyOndlbDQ9QGTF98lfPNEj4TA0NU2IGXRihN6KlBFdLbAYs81p-937y_wLBu35GzKuhrNFQFEtGr0OiW7ZLxA-ofF7fThoQK8t7mr90546-Te3j9C7LooMSVOeNRC4a3Gf52qU9lUbDHXLNMw08y2b55fSYk3MojCJg7uCcKh-B8K8Azo9LeZ5Od5FPg-bHU_76Lsx3Pvp0Hq_d3TQfFhb8NUtOt7RTlsi6pWbqWAWKK6C3nNRRBbz1-ono2jb3Mnl_FlZn16IWiZQxcSll=w763-h430-no',
     10: 'https://lh3.googleusercontent.com/43vVeCDi3SzzoPl1qF1E1E2FPX_msL5E5dd-uh4EGUX9KBgZ69PhOEMYfe5Mc1YKO8F4ovSpzfe-HEM-ZenR05zhb19_-Mhp7SBryl7AISGcOGgNaUD83b-yWYpVFL7n1iTN1jH5xqzUIRoZGHWtPrSnJpzRKvfDSjexiAiWGF7oLxkaJRRCF5iFQk7iHK-uISuUKRjEwyvc6CBgFp42EMjp47dITpQwLxRssRp8PFk9kV5kWw_84SsqcorKDbJikX4kmFQJ9gZVsWHBOg5gGPv7cViIaDYTe2vBiOx6y91wSdOc1_U6ToYxN_VU9iTOjgu2QyGMc3_YydY9KSyWvB1-6-gcJR3G3bkPpTXcvrxVZ4Rv5JcAEDv1emK2oZ2uuisTBNBnx0ZERkgLxcZEeQ5vlSjb1I5ZkTxBq8bij80bpsIQEo0efFB-Ly5RM0X0ztpdgAWeCjxix-nsXIA9KlyYBvdO9bnbEySLemo5rLVyPNElurCQZYce_WmrB9cl25lMUbUC-yG2OWZsltXQlY71hS0V9F97D-8t57rQAiQ0dqTDj87btKn6tyQchHkOXu0Auj9KadYjAsHhojRsyuroJHrEK5A2Z5L8pOFcQLpll8vB=w355-h200-no'
   }
 }
 
-var calendar = new Calendar("#app", {year:2016, month: 4, pictureUrls: pictureUrls, eventSettingObjects: eventSettingObjects});
+// var calendar = new Calendar("#app", {year:2016, month: 4, pictureUrls: pictureUrls, eventSettingObjects: eventSettingObjects});
+var calendar = new Calendar("#app", {pictureUrls: pictureUrls, eventSettingObjects: eventSettingObjects});
+
 
 calendar.createAndAddEvent({
   day: 25,
@@ -68,7 +70,9 @@ calendar.createAndAddEvent({
   isYearly: true,
   title: "Ano novo (geral)"
 }, {
-  success: () => {console.log(JSON.stringify(calendar.getEvents(true)))}
+  success: () => {
+    // console.log(JSON.stringify(calendar.getEvents(true)));
+  }
 });
 
 
@@ -79,7 +83,9 @@ calendar.createAndAddEvent({
   isYearly: true,
   title: "Dia de los muertos"
 }, {
-  success: () => {console.log(JSON.stringify(calendar.getEvents(true)))}
+  success: () => {
+    // console.log(JSON.stringify(calendar.getEvents(true)));
+  }
 });
 
 calendar.createAndAddEvent({
@@ -92,6 +98,12 @@ calendar.createAndAddEvent({
   isYearly: true,
   year: 'all',
   title: 'My Birthday'
+});
+
+calendar.createAndAddEvent({
+  date: new Date(2017, 0, 14),
+  title: '2017 Holiday',
+  description: 'The day we went to Meimoa'
 });
 
 window.calendar = calendar;
